@@ -15,5 +15,6 @@ class Player extends Model
         'nationality',
         'number',
         'position',
+        'picture',
     ];
 }
