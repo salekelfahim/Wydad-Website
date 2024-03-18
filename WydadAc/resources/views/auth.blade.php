@@ -51,11 +51,13 @@
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
+                <img src="{{ asset('images/Logo_Wydad_Athletic_Club.png') }}" class="logo" style="width: 25%; height:20%; margin-bottom: 4%;">
                     <h1>Welcome Back!</h1>
                     <p>Enter your personal details to use all of site features</p>
                     <button class="hidden" id="login">Sign In</button>
                 </div>
                 <div class="toggle-panel toggle-right">
+                <img src="{{ asset('images/Logo_Wydad_Athletic_Club.png') }}" class="logo" style="width: 25%; height:20%; margin-bottom: 4%;">
                     <h1>Hello, Friend!</h1>
                     <p>Register with your personal details to use all of site features</p>
                     <button class="hidden" id="register">Sign Up</button>
