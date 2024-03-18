@@ -14,5 +14,6 @@ class Staff extends Model
         'birthday',
         'nationality',
         'mission',
+        'picture',
     ];
 }

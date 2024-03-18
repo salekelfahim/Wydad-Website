@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Player extends Model
+class Game extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'firstname',
-        'lastname',
-        'birthday',
-        'nationality',
-        'number',
-        'position',
-        'picture',
+        'date',
+        'opponent',
+        'compitition',
+        'status',
+        'stadium',
     ];
 }
