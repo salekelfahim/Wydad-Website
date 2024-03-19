@@ -28,7 +28,7 @@ class AuthController extends Controller
         ]);
 
 
-        return redirect()->route('welcome');
+        return back()->with('succes', 'Account Created Succesfully! Please Sign In.');
     }
 
 
@@ -51,6 +51,6 @@ class AuthController extends Controller
         Auth::logout();
         session()->forget(['user_id', 'user_name']);
 
-        return redirect()->route('welcome');
+        return redirect()->route('auth');
     }
 }
