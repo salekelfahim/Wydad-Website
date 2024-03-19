@@ -39,8 +39,7 @@ class AuthController extends Controller
     {
         $donnerUser = $request->only('email', 'password');
         if (Auth::attempt($donnerUser)) {
-            $user = Auth::user();
-            session(['user_id' => $user->id, 'user_name' => $user->name]);
+            
                 return redirect()->route('welcome');
         }
 
@@ -50,7 +49,6 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        session()->forget(['user_id', 'user_name']);
 
         return redirect()->route('auth');
     }
