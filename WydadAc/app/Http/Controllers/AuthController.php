@@ -22,14 +22,14 @@ class AuthController extends Controller
     {
 
         User::create([
-            'firstname' => $request->input('fname'),
-            'lastname' => $request->input('lname'),
+            'firstname' => $request->input('firstname'),
+            'lastname' => $request->input('lastname'),
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
         ]);
 
 
-        return back()->with('succes', 'Account Created Succesfully! Please Sign In.');
+        return back()->with('success', 'Account Created Successfully! Please Sign In.');
     }
 
 

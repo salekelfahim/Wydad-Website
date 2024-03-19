@@ -15,11 +15,6 @@
     {{ session('success') }}
 </div>
 @endif
-@if(session('error'))
-<div class="alert alert-danger" id="alert">
-    {{ session('error') }}
-</div>
-@endif
 
 <body>
 
@@ -36,12 +31,12 @@
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email for registeration</span>
-                <input name="fname" type="text" placeholder="First Name">
-                @if($errors->has('firstname'))
+                <input name="firstname" type="text" placeholder="First Name">
+                @if($errors->has('fname'))
                 <div class="alert alert-danger">{{ $errors->first('firstname') }}</div>
                 @endif
-                <input name="lname" type="text" placeholder="Last Name">
-                @if($errors->has('lastname'))
+                <input name="lastname" type="text" placeholder="Last Name">
+                @if($errors->has('lname'))
                 <div class="alert alert-danger">{{ $errors->first('lastname') }}</div>
                 @endif
                 <input name="email" type="email" placeholder="Email">
@@ -52,6 +47,7 @@
                 @if($errors->has('password'))
                 <div class="alert alert-danger">{{ $errors->first('password') }}</div>
                 @endif
+                <input type="password" name="password_confirmation" placeholder="Confirm Password">
                 <button>Sign Up</button>
             </form>
         </div>
@@ -66,6 +62,12 @@
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email password</span>
+                @if(session('error'))
+                <div class="alert alert-danger" id="alert">
+                    {{ session('error') }}
+                </div>
+                @endif
+
                 <input name="email" type="email" placeholder="Email">
                 <input name="password" type="password" placeholder="Password">
                 <a href="#">Forget Your Password?</a>
