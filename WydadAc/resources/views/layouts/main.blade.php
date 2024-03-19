@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ministore</title>
+    <title>Wydad AC</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -167,7 +167,7 @@
                   <a class="nav-link me-4" href="#yearly-sale">Sale</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link me-4" href="#latest-blog">Blog</a>
+                <a href="{{route('logout')}}" class="dropdown-item">Logout</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link me-4 dropdown-toggle link-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pages</a>

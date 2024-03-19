@@ -22,3 +22,4 @@ Route::get('/auth', [AuthController::class, 'ShowForm'])->name('auth');
 
 Route::post('/register', [AuthController::class, 'Register'])->name('register');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
