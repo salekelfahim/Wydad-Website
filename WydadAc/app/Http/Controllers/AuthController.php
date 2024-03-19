@@ -35,7 +35,7 @@ class AuthController extends Controller
 
 
 
-    public function login(Request $request)
+    public function login(RegisterRequest $request)
     {
         $donnerUser = $request->only('email', 'password');
         if (Auth::attempt($donnerUser)) {

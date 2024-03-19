@@ -32,20 +32,20 @@
                 </div>
                 <span>or use your email for registeration</span>
                 <input name="firstname" type="text" placeholder="First Name">
-                @if($errors->has('fname'))
-                <div class="alert alert-danger">{{ $errors->first('firstname') }}</div>
+                @if($errors->has('firstname'))
+                <p style="color: red;">{{ $errors->first('firstname') }}</p>
                 @endif
                 <input name="lastname" type="text" placeholder="Last Name">
-                @if($errors->has('lname'))
-                <div class="alert alert-danger">{{ $errors->first('lastname') }}</div>
+                @if($errors->has('lastname'))
+                <p style="color: red;">{{ $errors->first('lastname') }}</p>
                 @endif
                 <input name="email" type="email" placeholder="Email">
                 @if($errors->has('email'))
-                <div class="alert alert-danger">{{ $errors->first('email') }}</div>
+                <p style="color: red;">{{ $errors->first('email') }}</p>
                 @endif
                 <input name="password" type="password" placeholder="Password">
                 @if($errors->has('password'))
-                <div class="alert alert-danger">{{ $errors->first('password') }}</div>
+                <p style="color: red;">{{ $errors->first('password') }}</p>
                 @endif
                 <input type="password" name="password_confirmation" placeholder="Confirm Password">
                 <button>Sign Up</button>
@@ -67,8 +67,13 @@
                     {{ session('error') }}
                 </div>
                 @endif
-
+                @if($errors->has('email'))
+                <p style="color: red;">{{ $errors->first('email') }}</p>
+                @endif
                 <input name="email" type="email" placeholder="Email">
+                @if($errors->has('password'))
+                <p style="color: red;">{{ $errors->first('password') }}</p>
+                @endif
                 <input name="password" type="password" placeholder="Password">
                 <a href="#">Forget Your Password?</a>
                 <button>Sign In</button>
