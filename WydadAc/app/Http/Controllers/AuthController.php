@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Dotenv\Validator;
 use Illuminate\Contracts\Session\Session;
@@ -17,7 +18,7 @@ class AuthController extends Controller
     }
 
     
-    public function Register(Request $request)
+    public function Register(RegisterRequest $request)
     {
 
         User::create([
