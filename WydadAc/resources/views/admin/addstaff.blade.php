@@ -2,20 +2,22 @@
 
 @section('content')
 
+@if(session('success'))
+
+
 <main>
 
-@if(session('success'))
 <div class="alert alert-success" id="alert">
     {{ session('success') }}
 </div>
 @endif
 
     <div class="welcome-page">
-        <h2 class="welcome-message">Add New Player</h2>
-        <p>You Can Add New Player Here! </p>
+        <h2 class="welcome-message">Add New Staff</h2>
+        <p>You Can Add New Staff Here! </p>
     </div>
 
-    <form method="post" class="mx-auto" action="{{route ('addplayer')}}" enctype="multipart/form-data" style="width: 55%;">
+    <form method="post" class="mx-auto" action="{{route ('addstaff')}}" enctype="multipart/form-data" style="width: 55%;">
         @csrf
 
         <div class="row">
@@ -56,28 +58,16 @@
             @enderror
         </div>
 
-        <div class="row">
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <label for="firstname" class="form-label">Number</label>
-                    <input type="number" id="number" name="number" class="form-control">
-                    @error('firstname')
-                    <div class="alert alert-danger">- {{ $message }}</div>
-                    @enderror
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <label for="position" class="form-label">Position</label>
-                    <select id="position" name="position" class="form-select">
-                        <option value="Goalkeeper">Goalkeeper</option>
-                        <option value="Defender">Defender</option>
-                        <option value="Midfielder">Midfielder</option>
-                        <option value="Forward">Forward</option>
-                    </select>
-                </div>
-
-            </div>
+        <div class="mb-3">
+            <label for="mission" class="form-label">Mission</label>
+            <select id="mission" name="mission" class="form-select">
+                <option value="Manager">Manager</option>
+                <option value="The Assistant Manager">The Assistant Manager</option>
+                <option value="The Goalkeeping Coach">The Goalkeeping Coach</option>
+                <option value="Fitness Coach">Fitness Coach</option>
+                <option value="Docteur">Docteur</option>
+                <option value="President">President</option>
+            </select>
         </div>
 
 
@@ -90,7 +80,7 @@
         </div>
 
 
-        <button name="submit" type="submit" class="btn btn-dark float-end mt-3">Add Player</button>
+        <button name="submit" type="submit" class="btn btn-dark float-end mt-3">Add Staff</button>
     </form>
 </main>
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,3 +32,6 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/addplayer', [PlayerController::class, 'Show']);
 Route::post('/addplayer', [PlayerController::class, 'AddPlayer'])->name('addplayer');
+
+Route::get('/addstaff', [StaffController::class, 'Show']);
+Route::post('/addstaff', [StaffController::class, 'AddStaff'])->name('addstaff');
