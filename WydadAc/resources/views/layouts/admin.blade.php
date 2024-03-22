@@ -1,530 +1,302 @@
-<!-- [ Pre-loader ] start -->
-<div class="loader-bg">
-  <div class="loader-track">
-    <div class="loader-fill"></div>
-  </div>
-</div>
-<!-- [ Pre-loader ] End -->
- <!-- [ Sidebar Menu ] start -->
-<nav class="pc-sidebar">
-  <div class="navbar-wrapper">
-    <div class="m-header">
-      <a href="../dashboard/index.html" class="b-brand text-primary">
-        <!-- ========   Change your logo from here   ============ -->
-        <img src="../assets/images/logo-dark.svg" class="img-fluid logo-lg" alt="logo">
-        <span class="badge bg-light-success rounded-pill ms-2 theme-version">v9.0</span>
-      </a>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wydad AC | Dashboard</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./img/svg/logo.svg" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Custom styles -->
+  @vite('resources/css/dashboard.css')
+</head>
+
+<body>
+  <div class="layer"></div>
+<!-- ! Body -->
+<a class="skip-link sr-only" href="#skip-target">Skip to content</a>
+<div class="page-flex">
+  <!-- ! Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-start">
+        <div class="sidebar-head">
+                <span class="icon logo" aria-hidden="true"></span>
+                <div style="margin-left: 25%; margin-top: -10%" class="logo-text">
+                <img src="{{ asset('images/Logo_Wydad_Athletic_Club.png') }}" class="logo" style="width: 35%; height:30%;margin-left:8%">
+                    <span style="margin-left: -10%;" class="logo-title">Wydad Ac</span>
+                    <span class="logo-subtitle">Dashboard</span>
+                </div>
+            <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
+                <span class="sr-only">Toggle menu</span>
+                <span class="icon menu-toggle" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="sidebar-body">
+            <ul class="sidebar-body-menu">
+                <li>
+                    <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
+                </li>
+                <li>
+                    <a class="show-cat-btn" href="##">
+                        <span class="icon document" aria-hidden="true"></span>Posts
+                        <span class="category__btn transparent-btn" title="Open list">
+                            <span class="sr-only">Open list</span>
+                            <span class="icon arrow-down" aria-hidden="true"></span>
+                        </span>
+                    </a>
+                    <ul class="cat-sub-menu">
+                        <li>
+                            <a href="posts.html">All Posts</a>
+                        </li>
+                        <li>
+                            <a href="new-post.html">Add new post</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="show-cat-btn" href="##">
+                        <span class="icon folder" aria-hidden="true"></span>Categories
+                        <span class="category__btn transparent-btn" title="Open list">
+                            <span class="sr-only">Open list</span>
+                            <span class="icon arrow-down" aria-hidden="true"></span>
+                        </span>
+                    </a>
+                    <ul class="cat-sub-menu">
+                        <li>
+                            <a href="categories.html">All categories</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="show-cat-btn" href="##">
+                        <span class="icon image" aria-hidden="true"></span>Media
+                        <span class="category__btn transparent-btn" title="Open list">
+                            <span class="sr-only">Open list</span>
+                            <span class="icon arrow-down" aria-hidden="true"></span>
+                        </span>
+                    </a>
+                    <ul class="cat-sub-menu">
+                        <li>
+                            <a href="media-01.html">Media-01</a>
+                        </li>
+                        <li>
+                            <a href="media-02.html">Media-02</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="show-cat-btn" href="##">
+                        <span class="icon paper" aria-hidden="true"></span>Pages
+                        <span class="category__btn transparent-btn" title="Open list">
+                            <span class="sr-only">Open list</span>
+                            <span class="icon arrow-down" aria-hidden="true"></span>
+                        </span>
+                    </a>
+                    <ul class="cat-sub-menu">
+                        <li>
+                            <a href="pages.html">All pages</a>
+                        </li>
+                        <li>
+                            <a href="new-page.html">Add new page</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="comments.html">
+                        <span class="icon message" aria-hidden="true"></span>
+                        Comments
+                    </a>
+                    <span class="msg-counter">7</span>
+                </li>
+            </ul>
+            <span class="system-menu__title">system</span>
+            <ul class="sidebar-body-menu">
+                <li>
+                    <a href="appearance.html"><span class="icon edit" aria-hidden="true"></span>Appearance</a>
+                </li>
+                <li>
+                    <a class="show-cat-btn" href="##">
+                        <span class="icon category" aria-hidden="true"></span>Extentions
+                        <span class="category__btn transparent-btn" title="Open list">
+                            <span class="sr-only">Open list</span>
+                            <span class="icon arrow-down" aria-hidden="true"></span>
+                        </span>
+                    </a>
+                    <ul class="cat-sub-menu">
+                        <li>
+                            <a href="extention-01.html">Extentions-01</a>
+                        </li>
+                        <li>
+                            <a href="extention-02.html">Extentions-02</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="show-cat-btn" href="##">
+                        <span class="icon user-3" aria-hidden="true"></span>Users
+                        <span class="category__btn transparent-btn" title="Open list">
+                            <span class="sr-only">Open list</span>
+                            <span class="icon arrow-down" aria-hidden="true"></span>
+                        </span>
+                    </a>
+                    <ul class="cat-sub-menu">
+                        <li>
+                            <a href="users-01.html">Users-01</a>
+                        </li>
+                        <li>
+                            <a href="users-02.html">Users-02</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="##"><span class="icon setting" aria-hidden="true"></span>Settings</a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="navbar-content">
-      <div class="card pc-user-card">
-        <div class="card-body">
-          <div class="d-flex align-items-center">
-            <div class="flex-shrink-0">
-              <img src="../assets/images/user/avatar-1.jpg" alt="user-image" class="user-avtar wid-45 rounded-circle" />
+    <div class="sidebar-footer">
+        <a href="##" class="sidebar-user">
+            <span class="sidebar-user-img">
+                <picture><source srcset="./img/avatar/avatar-illustrated-01.webp" type="image/webp"><img src="./img/avatar/avatar-illustrated-01.png" alt="User name"></picture>
+            </span>
+            <div class="sidebar-user-info">
+                <span class="sidebar-user__title">Nafisa Sh.</span>
+                <span class="sidebar-user__subtitle">Support manager</span>
             </div>
-            <div class="flex-grow-1 ms-3 me-2">
-              <h6 class="mb-0">Jonh Smith</h6>
-              <small>Administrator</small>
-            </div>
-            <a class="btn btn-icon btn-link-secondary avtar" data-bs-toggle="collapse" href="#pc_sidebar_userlink">
-              <svg class="pc-icon">
-                <use xlink:href="#custom-sort-outline"></use>
-              </svg>
-            </a>
-          </div>
-          <div class="collapse pc-user-links" id="pc_sidebar_userlink">
-            <div class="pt-3">
-              <a href="#!">
-                <i class="ti ti-user"></i>
-                <span>My Account</span>
-              </a>
-              <a href="#!">
-                <i class="ti ti-settings"></i>
-                <span>Settings</span>
-              </a>
-              <a href="#!">
-                <i class="ti ti-lock"></i>
-                <span>Lock Screen</span>
-              </a>
-              <a href="#!">
-                <i class="ti ti-power"></i>
-                <span>Logout</span>
-              </a>
-            </div>
-          </div>
-        </div>
+        </a>
+    </div>
+</aside>
+  <div class="main-wrapper">
+    <!-- ! Main nav -->
+    <nav class="main-nav--bg">
+  <div class="container main-nav">
+    <div class="main-nav-start">
+      <div class="search-wrapper">
+        <i data-feather="search" aria-hidden="true"></i>
+        <input type="text" placeholder="Enter keywords ..." required>
       </div>
-
-      <ul class="pc-navbar">
-        <li class="pc-item pc-caption">
-          <label>Navigation</label>
-        </li>
-
-        <li class="pc-item">
-          <a href="../dashboard/index.html" class="pc-link">
-            <span class="pc-micon">
-              <svg class="pc-icon">
-                <use xlink:href="#custom-status-up"></use>
-              </svg>
-            </span>
-            <span class="pc-mtext">Dashboard</span>
-          </a>
-        </li>
-
-        <li class="pc-item pc-caption">
-          <label>Authentication</label>
-        </li>
-        <li class="pc-item">
-          <a href="../pages/login-v1.html" class="pc-link" target="_blank"
-            ><span class="pc-micon">
-              <svg class="pc-icon">
-                <use xlink:href="#custom-shield"></use>
-              </svg> </span
-            ><span class="pc-mtext">Login</span></a
-          >
-        </li>
-        <li class="pc-item">
-          <a href="../pages/register-v1.html" class="pc-link" target="_blank"
-            ><span class="pc-micon">
-              <svg class="pc-icon">
-                <use xlink:href="#custom-password-check"></use>
-              </svg> </span
-            ><span class="pc-mtext">Register</span></a
-          >
-        </li>
-        <li class="pc-item pc-caption">
-          <label>UI Components</label>
-          <svg class="pc-icon">
-            <use xlink:href="#custom-box-1"></use>
-          </svg>
-        </li>
-        <li class="pc-item">
-          <a href="../elements/bc_typography.html" class="pc-link"
-            ><span class="pc-micon">
-              <svg class="pc-icon">
-                <use xlink:href="#custom-text-block"></use>
-              </svg> </span
-            ><span class="pc-mtext">Typography</span></a
-          >
-        </li>
-        <li class="pc-item">
-          <a href="../elements/bc_color.html" class="pc-link"
-            ><span class="pc-micon">
-              <svg class="pc-icon">
-                <use xlink:href="#custom-clipboard"></use>
-              </svg> </span
-            ><span class="pc-mtext">Color</span></a
-          >
-        </li>
-        <li class="pc-item">
-          <a href="../elements/icon-tabler.html" class="pc-link"
-            ><span class="pc-micon">
-              <svg class="pc-icon">
-                <use xlink:href="#custom-mouse-circle"></use>
-              </svg> </span
-            ><span class="pc-mtext">Tabler</span>
-          </a>
-        </li>
-        <li class="pc-item pc-caption">
-          <label>Other</label>
-          <svg class="pc-icon">
-            <use xlink:href="#custom-notification-status"></use>
-          </svg>
-        </li>
-        <li class="pc-item pc-hasmenu">
-          <a href="#!" class="pc-link"
-            ><span class="pc-micon">
-              <svg class="pc-icon">
-                <use xlink:href="#custom-level"></use>
-              </svg> </span
-            ><span class="pc-mtext">Menu levels</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span
-          ></a>
-          <ul class="pc-submenu">
-            <li class="pc-item"><a class="pc-link" href="#!">Level 2.1</a></li>
-            <li class="pc-item pc-hasmenu">
-              <a href="#!" class="pc-link"
-                >Level 2.2<span class="pc-arrow"><i data-feather="chevron-right"></i></span
-              ></a>
-              <ul class="pc-submenu">
-                <li class="pc-item"><a class="pc-link" href="#!">Level 3.1</a></li>
-                <li class="pc-item"><a class="pc-link" href="#!">Level 3.2</a></li>
-                <li class="pc-item pc-hasmenu">
-                  <a href="#!" class="pc-link"
-                    >Level 3.3<span class="pc-arrow"><i data-feather="chevron-right"></i></span
-                  ></a>
-                  <ul class="pc-submenu">
-                    <li class="pc-item"><a class="pc-link" href="#!">Level 4.1</a></li>
-                    <li class="pc-item"><a class="pc-link" href="#!">Level 4.2</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li class="pc-item pc-hasmenu">
-              <a href="#!" class="pc-link"
-                >Level 2.3<span class="pc-arrow"><i data-feather="chevron-right"></i></span
-              ></a>
-              <ul class="pc-submenu">
-                <li class="pc-item"><a class="pc-link" href="#!">Level 3.1</a></li>
-                <li class="pc-item"><a class="pc-link" href="#!">Level 3.2</a></li>
-                <li class="pc-item pc-hasmenu">
-                  <a href="#!" class="pc-link"
-                    >Level 3.3<span class="pc-arrow"><i data-feather="chevron-right"></i></span
-                  ></a>
-                  <ul class="pc-submenu">
-                    <li class="pc-item"><a class="pc-link" href="#!">Level 4.1</a></li>
-                    <li class="pc-item"><a class="pc-link" href="#!">Level 4.2</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li class="pc-item"
-          ><a href="../other/sample-page.html" class="pc-link">
-            <span class="pc-micon">
-              <svg class="pc-icon">
-                <use xlink:href="#custom-notification-status"></use>
-              </svg>
-            </span>
-            <span class="pc-mtext">Sample page</span></a
-          ></li
-        >
-
-      </ul>
-      <div class="card pc-user-card mt-3">
-        <div class="card-body text-center">
-          <img src="../assets/images/application/img-coupon.png" alt="img" class="img-fluid w-50" />
-          <h5 class="mb-0 mt-1">Able Pro</h5>
-          <p>Checkout pro features</p>
-          <a
-            href="https://themeforest.net/item/able-pro-bootstrap-admin-dashboard-template/50170229"
-            target="_blank"
-            class="btn btn-warning">
-            <svg class="pc-icon me-2">
-              <use xlink:href="#custom-logout-1-outline"></use>
-            </svg>
-            Upgrade to Pro
-          </a>
-        </div>
+    </div>
+    <div class="main-nav-end">
+      <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
+        <span class="sr-only">Toggle menu</span>
+        <span class="icon menu-toggle--gray" aria-hidden="true"></span>
+      </button>
+      <div class="lang-switcher-wrapper">
+        <button class="lang-switcher transparent-btn" type="button">
+          EN
+          <i data-feather="chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-menu dropdown">
+          <li><a href="##">English</a></li>
+          <li><a href="##">French</a></li>
+          <li><a href="##">Uzbek</a></li>
+        </ul>
+      </div>
+      <button class="theme-switcher gray-circle-btn" type="button" title="Switch theme">
+        <span class="sr-only">Switch theme</span>
+        <i class="sun-icon" data-feather="sun" aria-hidden="true"></i>
+        <i class="moon-icon" data-feather="moon" aria-hidden="true"></i>
+      </button>
+      <div class="notification-wrapper">
+        <button class="gray-circle-btn dropdown-btn" title="To messages" type="button">
+          <span class="sr-only">To messages</span>
+          <span class="icon notification active" aria-hidden="true"></span>
+        </button>
+        <ul class="users-item-dropdown notification-dropdown dropdown">
+          <li>
+            <a href="##">
+              <div class="notification-dropdown-icon info">
+                <i data-feather="check"></i>
+              </div>
+              <div class="notification-dropdown-text">
+                <span class="notification-dropdown__title">System just updated</span>
+                <span class="notification-dropdown__subtitle">The system has been successfully upgraded. Read more
+                  here.</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="##">
+              <div class="notification-dropdown-icon danger">
+                <i data-feather="info" aria-hidden="true"></i>
+              </div>
+              <div class="notification-dropdown-text">
+                <span class="notification-dropdown__title">The cache is full!</span>
+                <span class="notification-dropdown__subtitle">Unnecessary caches take up a lot of memory space and
+                  interfere ...</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="##">
+              <div class="notification-dropdown-icon info">
+                <i data-feather="check" aria-hidden="true"></i>
+              </div>
+              <div class="notification-dropdown-text">
+                <span class="notification-dropdown__title">New Subscriber here!</span>
+                <span class="notification-dropdown__subtitle">A new subscriber has subscribed.</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="link-to-page" href="##">Go to Notifications page</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-user-wrapper">
+        <button href="##" class="nav-user-btn dropdown-btn" title="My profile" type="button">
+          <span class="sr-only">My profile</span>
+          <span class="nav-user-img">
+            <picture><source srcset="./img/avatar/avatar-illustrated-02.webp" type="image/webp"><img src="./img/avatar/avatar-illustrated-02.png" alt="User name"></picture>
+          </span>
+        </button>
+        <ul class="users-item-dropdown nav-user-dropdown dropdown">
+          <li><a href="##">
+              <i data-feather="user" aria-hidden="true"></i>
+              <span>Profile</span>
+            </a></li>
+          <li><a href="##">
+              <i data-feather="settings" aria-hidden="true"></i>
+              <span>Account settings</span>
+            </a></li>
+          <li><a class="danger" href="##">
+              <i data-feather="log-out" aria-hidden="true"></i>
+              <span>Log out</span>
+            </a></li>
+        </ul>
       </div>
     </div>
   </div>
 </nav>
-<!-- [ Sidebar Menu ] end --> <!-- [ Header Topbar ] start -->
-<header class="pc-header">
-  <div class="header-wrapper"> <!-- [Mobile Media Block] start -->
-<div class="me-auto pc-mob-drp">
-  <ul class="list-unstyled">
-    <!-- ======= Menu collapse Icon ===== -->
-    <li class="pc-h-item pc-sidebar-collapse">
-      <a href="#" class="pc-head-link ms-0" id="sidebar-hide">
-        <i class="ti ti-menu-2"></i>
-      </a>
-    </li>
-    <li class="pc-h-item pc-sidebar-popup">
-      <a href="#" class="pc-head-link ms-0" id="mobile-collapse">
-        <i class="ti ti-menu-2"></i>
-      </a>
-    </li>
-    <li class="dropdown pc-h-item">
-      <a
-        class="pc-head-link dropdown-toggle arrow-none m-0 trig-drp-search"
-        data-bs-toggle="dropdown"
-        href="#"
-        role="button"
-        aria-haspopup="false"
-        aria-expanded="false"
-      >
-        <svg class="pc-icon">
-          <use xlink:href="#custom-search-normal-1"></use>
-        </svg>
-      </a>
-      <div class="dropdown-menu pc-h-dropdown drp-search">
-        <form class="px-3 py-2">
-          <input type="search" class="form-control border-0 shadow-none" placeholder="Search here. . ." />
-        </form>
-      </div>
-    </li>
-  </ul>
-</div>
-<!-- [Mobile Media Block end] -->
-<div class="ms-auto">
-  <ul class="list-unstyled">
-    <li class="dropdown pc-h-item">
-      <a
-        class="pc-head-link dropdown-toggle arrow-none me-0"
-        data-bs-toggle="dropdown"
-        href="#"
-        role="button"
-        aria-haspopup="false"
-        aria-expanded="false"
-      >
-        <svg class="pc-icon">
-          <use xlink:href="#custom-notification"></use>
-        </svg>
-        <span class="badge bg-success pc-h-badge">3</span>
-      </a>
-      <div class="dropdown-menu dropdown-notification dropdown-menu-end pc-h-dropdown">
-        <div class="dropdown-header d-flex align-items-center justify-content-between">
-          <h5 class="m-0">Notifications</h5>
-          <a href="#!" class="btn btn-link btn-sm">Mark all read</a>
-        </div>
-        <div class="dropdown-body text-wrap header-notification-scroll position-relative" style="max-height: calc(100vh - 215px)">
-          <p class="text-span">Today</p>
-          <div class="card mb-2">
-            <div class="card-body">
-              <div class="d-flex">
-                <div class="flex-shrink-0">
-                  <svg class="pc-icon text-primary">
-                    <use xlink:href="#custom-layer"></use>
-                  </svg>
-                </div>
-                <div class="flex-grow-1 ms-3">
-                  <span class="float-end text-sm text-muted">2 min ago</span>
-                  <h5 class="text-body mb-2">UI/UX Design</h5>
-                  <p class="mb-0"
-                    >Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                    type and scrambled it to make a type</p
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card mb-2">
-            <div class="card-body">
-              <div class="d-flex">
-                <div class="flex-shrink-0">
-                  <svg class="pc-icon text-primary">
-                    <use xlink:href="#custom-sms"></use>
-                  </svg>
-                </div>
-                <div class="flex-grow-1 ms-3">
-                  <span class="float-end text-sm text-muted">1 hour ago</span>
-                  <h5 class="text-body mb-2">Message</h5>
-                  <p class="mb-0">Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <p class="text-span">Yesterday</p>
-          <div class="card mb-2">
-            <div class="card-body">
-              <div class="d-flex">
-                <div class="flex-shrink-0">
-                  <svg class="pc-icon text-primary">
-                    <use xlink:href="#custom-document-text"></use>
-                  </svg>
-                </div>
-                <div class="flex-grow-1 ms-3">
-                  <span class="float-end text-sm text-muted">2 hour ago</span>
-                  <h5 class="text-body mb-2">Forms</h5>
-                  <p class="mb-0"
-                    >Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                    type and scrambled it to make a type</p
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card mb-2">
-            <div class="card-body">
-              <div class="d-flex">
-                <div class="flex-shrink-0">
-                  <svg class="pc-icon text-primary">
-                    <use xlink:href="#custom-user-bold"></use>
-                  </svg>
-                </div>
-                <div class="flex-grow-1 ms-3">
-                  <span class="float-end text-sm text-muted">12 hour ago</span>
-                  <h5 class="text-body mb-2">Challenge invitation</h5>
-                  <p class="mb-2"><span class="text-dark">Jonny aber</span> invites to join the challenge</p>
-                  <button class="btn btn-sm btn-outline-secondary me-2">Decline</button>
-                  <button class="btn btn-sm btn-primary">Accept</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card mb-2">
-            <div class="card-body">
-              <div class="d-flex">
-                <div class="flex-shrink-0">
-                  <svg class="pc-icon text-primary">
-                    <use xlink:href="#custom-security-safe"></use>
-                  </svg>
-                </div>
-                <div class="flex-grow-1 ms-3">
-                  <span class="float-end text-sm text-muted">5 hour ago</span>
-                  <h5 class="text-body mb-2">Security</h5>
-                  <p class="mb-0"
-                    >Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                    type and scrambled it to make a type</p
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="text-center py-2">
-          <a href="#!" class="link-danger">Clear all Notifications</a>
-        </div>
-      </div>
-    </li>
-    <li class="dropdown pc-h-item header-user-profile">
-      <a
-        class="pc-head-link dropdown-toggle arrow-none me-0"
-        data-bs-toggle="dropdown"
-        href="#"
-        role="button"
-        aria-haspopup="false"
-        data-bs-auto-close="outside"
-        aria-expanded="false"
-      >
-        <img src="../assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar" />
-      </a>
-      <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown">
-        <div class="dropdown-header d-flex align-items-center justify-content-between">
-          <h5 class="m-0">Profile</h5>
-        </div>
-        <div class="dropdown-body">
-          <div class="profile-notification-scroll position-relative" style="max-height: calc(100vh - 225px)">
-            <div class="d-flex mb-1">
-              <div class="flex-shrink-0">
-                <img src="../assets/images/user/avatar-2.jpg" alt="user-image" class="user-avtar wid-35" />
-              </div>
-              <div class="flex-grow-1 ms-3">
-                <h6 class="mb-1">Carson Darrin 🖖</h6>
-                <span>carson.darrin@company.io</span>
-              </div>
-            </div>
-            <hr class="border-secondary border-opacity-50" />
-            <div class="card">
-              <div class="card-body py-3">
-                <div class="d-flex align-items-center justify-content-between">
-                  <h5 class="mb-0 d-inline-flex align-items-center"
-                    ><svg class="pc-icon text-muted me-2">
-                      <use xlink:href="#custom-notification-outline"></use></svg
-                    >Notification</h5
-                  >
-                  <div class="form-check form-switch form-check-reverse m-0">
-                    <input class="form-check-input f-18" type="checkbox" role="switch" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <p class="text-span">Manage</p>
-            <a href="#" class="dropdown-item">
-              <span>
-                <svg class="pc-icon text-muted me-2">
-                  <use xlink:href="#custom-setting-outline"></use>
-                </svg>
-                <span>Settings</span>
-              </span>
-            </a>
-            <a href="#" class="dropdown-item">
-              <span>
-                <svg class="pc-icon text-muted me-2">
-                  <use xlink:href="#custom-share-bold"></use>
-                </svg>
-                <span>Share</span>
-              </span>
-            </a>
-            <a href="#" class="dropdown-item">
-              <span>
-                <svg class="pc-icon text-muted me-2">
-                  <use xlink:href="#custom-lock-outline"></use>
-                </svg>
-                <span>Change Password</span>
-              </span>
-            </a>
-            <hr class="border-secondary border-opacity-50" />
-            <p class="text-span">Team</p>
-            <a href="#" class="dropdown-item">
-              <span>
-                <svg class="pc-icon text-muted me-2">
-                  <use xlink:href="#custom-profile-2user-outline"></use>
-                </svg>
-                <span>UI Design team</span>
-              </span>
-              <div class="user-group">
-                <img src="../assets/images/user/avatar-1.jpg" alt="user-image" class="avtar" />
-                <span class="avtar bg-danger text-white">K</span>
-                <span class="avtar bg-success text-white">
-                  <svg class="pc-icon m-0">
-                    <use xlink:href="#custom-user"></use>
-                  </svg>
-                </span>
-                <span class="avtar bg-light-primary text-primary">+2</span>
-              </div>
-            </a>
-            <a href="#" class="dropdown-item">
-              <span>
-                <svg class="pc-icon text-muted me-2">
-                  <use xlink:href="#custom-profile-2user-outline"></use>
-                </svg>
-                <span>Friends Groups</span>
-              </span>
-              <div class="user-group">
-                <img src="../assets/images/user/avatar-1.jpg" alt="user-image" class="avtar" />
-                <span class="avtar bg-danger text-white">K</span>
-                <span class="avtar bg-success text-white">
-                  <svg class="pc-icon m-0">
-                    <use xlink:href="#custom-user"></use>
-                  </svg>
-                </span>
-              </div>
-            </a>
-            <a href="#" class="dropdown-item">
-              <span>
-                <svg class="pc-icon text-muted me-2">
-                  <use xlink:href="#custom-add-outline"></use>
-                </svg>
-                <span>Add new</span>
-              </span>
-              <div class="user-group">
-                <span class="avtar bg-primary text-white">
-                  <svg class="pc-icon m-0">
-                    <use xlink:href="#custom-add-outline"></use>
-                  </svg>
-                </span>
-              </div>
-            </a>
-            <hr class="border-secondary border-opacity-50" />
-            <div class="d-grid mb-3">
-              <button class="btn btn-primary">
-                <svg class="pc-icon me-2">
-                  <use xlink:href="#custom-logout-1-outline"></use></svg
-                >Logout
-              </button>
-            </div>
-            <div
-              class="card border-0 shadow-none drp-upgrade-card mb-0"
-              style="background-image: url(../assets/images/layout/img-profile-card.jpg)"
-            >
-              <div class="card-body">
-                <div class="user-group">
-                  <img src="../assets/images/user/avatar-1.jpg" alt="user-image" class="avtar" />
-                  <img src="../assets/images/user/avatar-2.jpg" alt="user-image" class="avtar" />
-                  <img src="../assets/images/user/avatar-3.jpg" alt="user-image" class="avtar" />
-                  <img src="../assets/images/user/avatar-4.jpg" alt="user-image" class="avtar" />
-                  <img src="../assets/images/user/avatar-5.jpg" alt="user-image" class="avtar" />
-                  <span class="avtar bg-light-primary text-primary">+20</span>
-                </div>
-                <h3 class="my-3 text-dark">245.3k <small class="text-muted">Followers</small></h3>
-                <div class="btn btn btn-warning">
-                  <svg class="pc-icon me-2">
-                    <use xlink:href="#custom-logout-1-outline"></use>
-                  </svg>
-                  Upgrade to Business
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </li>
-  </ul>
-</div>
- </div>
-</header>
-<!-- [ Header ] end -->
 
+<div>
+@yield('content')
+</div>
+
+<!-- ! Footer -->
+<footer class="footer">
+  <div class="container footer--flex">
+    <div class="footer-start">
+      <p>2021 © Elegant Dashboard - <a href="elegant-dashboard.com" target="_blank"
+          rel="noopener noreferrer">elegant-dashboard.com</a></p>
+    </div>
+    <ul class="footer-end">
+      <li><a href="##">About</a></li>
+      <li><a href="##">Support</a></li>
+      <li><a href="##">Puchase</a></li>
+    </ul>
+  </div>
+</footer>
+  </div>
+</div>
+<!-- Chart library -->
+<script src="./plugins/chart.min.js"></script>
+<!-- Icons library -->
+<script src="plugins/feather.min.js"></script>
+<!-- Custom scripts -->
+<script src="js/script.js"></script>
+</body>
+
+</html>

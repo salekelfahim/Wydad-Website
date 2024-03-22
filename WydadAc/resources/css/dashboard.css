@@ -101,6 +101,20 @@
    text-decoration: underline dotted;
    /* 2 */
  }
+
+ .welcome-page {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 28vh;
+}
+
+.welcome-message {
+    font-size: 24px;
+    color: #333;
+}
  
  /**
   * Add the correct font weight in Chrome, Edge, and Safari.

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PlayerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,7 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.dashboard');
 })->name('dashboard');
 
 Route::get('/auth', [AuthController::class, 'ShowForm'])->name('auth');
@@ -27,3 +28,5 @@ Route::get('/auth', [AuthController::class, 'ShowForm'])->name('auth');
 Route::post('/register', [AuthController::class, 'Register'])->name('register');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/addplayer', [PlayerController::class, 'Show'])->name('addplayer');
