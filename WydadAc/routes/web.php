@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('accueil');
 })->name('welcome');
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
 Route::get('/auth', [AuthController::class, 'ShowForm'])->name('auth');
 
 Route::post('/register', [AuthController::class, 'Register'])->name('register');
