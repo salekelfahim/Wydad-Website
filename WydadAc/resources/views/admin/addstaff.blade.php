@@ -14,7 +14,7 @@
 
     <div class="welcome-page">
         <h2 class="welcome-message">Add New Staff</h2>
-        <p>You Can Add New Staff Here! </p>
+        <p style="margin-top: 1%;">You Can Add New Staff Here! </p>
     </div>
 
     <form method="post" class="mx-auto" action="{{route ('addstaff')}}" enctype="multipart/form-data" style="width: 55%;">

@@ -33,5 +33,7 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/addplayer', [PlayerController::class, 'Show']);
 Route::post('/addplayer', [PlayerController::class, 'AddPlayer'])->name('addplayer');
 
+Route::get('/playerslist', [PlayerController::class, 'getPlayers'])->name('playerslist');
+
 Route::get('/addstaff', [StaffController::class, 'Show']);
 Route::post('/addstaff', [StaffController::class, 'AddStaff'])->name('addstaff');

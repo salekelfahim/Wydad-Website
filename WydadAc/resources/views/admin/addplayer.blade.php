@@ -12,7 +12,7 @@
 
     <div class="welcome-page">
         <h2 class="welcome-message">Add New Player</h2>
-        <p>You Can Add New Player Here! </p>
+        <p style="margin-top: 1%;">You Can Add New Player Here! </p>
     </div>
 
     <form method="post" class="mx-auto" action="{{route ('addplayer')}}" enctype="multipart/form-data" style="width: 55%;">

@@ -29,4 +29,11 @@ class PlayerController extends Controller
         return back()->with('success', 'Player Added Successfully!');
 
     }
+
+    public function getPlayers()
+    {
+        $players = Player::all();
+
+        return view('admin.playerslist', compact('players'));
+    }
 }
