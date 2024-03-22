@@ -2,13 +2,19 @@
 
 @section('content')
 
+@if(session('success'))
+<div style="width: 80%;" class="alert alert-success" id="alert">
+    {{ session('success') }}
+</div>
+@endif
+
 <main>
     <div class="welcome-page">
         <h2 class="welcome-message">Add New Event</h2>
         <p>You Can Add Your Event Here! Thank You.</p>
     </div>
 
-    <form method="post" class="mx-auto" action="" enctype="multipart/form-data" style="width: 55%;">
+    <form method="post" class="mx-auto" action="{{route ('addplayer')}}" enctype="multipart/form-data" style="width: 55%;">
         @csrf
 
         <div class="row">
@@ -31,8 +37,6 @@
                 </div>
             </div>
         </div>
-
-
 
 
         <div class="mb-3">
@@ -78,7 +82,7 @@
 
         <div class="mb-3">
             <label for="form4Example3" class="form-label">Image</label>
-            <input type="file" id="image" name="image" class="form-control" accept="image/*">
+            <input type="file" id="picture" name="picture" class="form-control" accept="image/*">
             @error('image')
             <div class="alert alert-danger">- {{ $message }}</div>
             @enderror

@@ -29,4 +29,5 @@ Route::post('/register', [AuthController::class, 'Register'])->name('register');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/addplayer', [PlayerController::class, 'Show'])->name('addplayer');
+Route::get('/addplayer', [PlayerController::class, 'Show']);
+Route::post('/addplayer', [PlayerController::class, 'AddPlayer'])->name('addplayer');
