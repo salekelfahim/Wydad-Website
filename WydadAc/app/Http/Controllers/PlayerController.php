@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PlayerRequest;
 use App\Models\Player;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class PlayerController extends Controller
         return view('admin.addplayer');
     }
 
-    public function AddPlayer(Request $request)
+    public function AddPlayer(PlayerRequest $request)
     {
         $picture = $request->file('picture')->store('images', 'public');
 
@@ -27,7 +28,6 @@ class PlayerController extends Controller
         ]);
 
         return back()->with('success', 'Player Added Successfully!');
-
     }
 
     public function getPlayers()
@@ -35,5 +35,30 @@ class PlayerController extends Controller
         $players = Player::all();
 
         return view('admin.playerslist', compact('players'));
+    }
+
+    public function update(PlayerRequest $request, $id)
+    {
+
+        $player = Player::find($id);
+
+        if (!$player) {
+            return redirect()->back()->with('error', 'Player not found.');
+        }
+
+        $player->firstname = $request->firstname;
+        $player->lastname = $request->lastname;
+        $player->birthday = $request->birthday;
+        $player->nationality = $request->nationality;
+        $player->number = $request->number;
+        $player->position = $request->position;
+
+        if ($request->hasFile('picture')) {
+            $player->picture = $request->file('picture')->store('images', 'public');
+        }
+
+        $player->save();
+
+        return redirect()->back()->with('success', 'Player updated successfully.');
     }
 }

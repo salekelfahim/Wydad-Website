@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StaffRequest;
 use App\Models\Staff;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class StaffController extends Controller
         return view('admin.addstaff');
     }
 
-    public function AddStaff(Request $request)
+    public function AddStaff(StaffRequest $request)
     {
         $picture = $request->file('picture')->store('images', 'public');
 
@@ -28,4 +29,13 @@ class StaffController extends Controller
         return back()->with('success', 'Staff Added Successfully!');
 
     }
+
+    public function getStaff()
+    {
+        $staffs = Staff::all();
+
+        return view('admin.stafflist', compact('staffs'));
+    }
+
+    
 }
