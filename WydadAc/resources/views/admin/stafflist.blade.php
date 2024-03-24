@@ -55,7 +55,11 @@
                   <ul class="list-unstyled mb-0 d-flex justify-content-end">
                     <li><a href="#" class="text-primary" data-toggle="tooltip" title="" data-original-title="view"><i class="far fa-eye"></i></a></li>
                     <li data-bs-toggle="modal" data-bs-target="#exampleModal{{$staff->id}}" class="text-info" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></li>
-                    <li><a href="#" class="text-danger" data-toggle="tooltip" title="" data-original-title="Delete"><i class="far fa-trash-alt"></i></a></li>
+                    <form action="{{ route('staff.delete', $staff->id) }}" method="POST" style="display: inline-block;">
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="text-danger" data-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure you want to delete this staff?')"><i class="far fa-trash-alt"></i></button>
+                    </form>
                   </ul>
                 </td>
                 <!-- Modal -->
@@ -108,18 +112,18 @@
                             @enderror
                           </div>
 
-                              <div class="mb-3">
-                                <label for="mission" class="form-label">Mission</label>
-                                <select id="mission" name="mission" class="form-select">
-                                  <option value="{{$staff->mission}}">{{$staff->mission}}</option>
-                                  <option value="Manager">Manager</option>
-                                  <option value="The Assistant Manager">The Assistant Manager</option>
-                                  <option value="The Goalkeeping Coach">The Goalkeeping Coach</option>
-                                  <option value="Fitness Coach">Fitness Coach</option>
-                                  <option value="Docteur">Docteur</option>
-                                  <option value="President">President</option>
-                                </select>
-                              </div>
+                          <div class="mb-3">
+                            <label for="mission" class="form-label">Mission</label>
+                            <select id="mission" name="mission" class="form-select">
+                              <option value="{{$staff->mission}}">{{$staff->mission}}</option>
+                              <option value="Manager">Manager</option>
+                              <option value="The Assistant Manager">The Assistant Manager</option>
+                              <option value="The Goalkeeping Coach">The Goalkeeping Coach</option>
+                              <option value="Fitness Coach">Fitness Coach</option>
+                              <option value="Docteur">Docteur</option>
+                              <option value="President">President</option>
+                            </select>
+                          </div>
 
 
 

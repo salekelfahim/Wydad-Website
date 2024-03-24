@@ -43,3 +43,6 @@ Route::post('/addstaff', [StaffController::class, 'AddStaff'])->name('addstaff')
 Route::get('stafflist', [StaffController::class, 'getStaff'])->name('stafflist');
 
 Route::put('/updatestaff/{id}', [StaffController::class, 'update'])->name('staff.update');
+
+Route::delete('/deletestaff/{id}', [StaffController::class, 'delete'])->name('staff.delete');
+

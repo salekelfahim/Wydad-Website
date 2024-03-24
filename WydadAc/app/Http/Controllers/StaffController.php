@@ -61,5 +61,16 @@ class StaffController extends Controller
         return redirect()->back()->with('success', 'Staff updated successfully.');
     }
 
-   
+    public function delete($id)
+    {
+        $staff = Staff::findOrfail($id);
+
+        if (!$staff) {
+            return redirect()->back()->with('error', 'Staff not found.');
+        }
+
+        $staff->delete();
+
+        return redirect()->back()->with('success', 'Staff deleted successfully.');
+    }
 }
