@@ -61,4 +61,17 @@ class PlayerController extends Controller
 
         return redirect()->back()->with('success', 'Player updated successfully.');
     }
+
+    public function delete($id)
+    {
+        $player = Player::findOrfail($id);
+
+        if (!$player) {
+            return redirect()->back()->with('error', 'Player not found.');
+        }
+
+        $player->delete();
+
+        return redirect()->back()->with('success', 'Player deleted successfully.');
+    }
 }

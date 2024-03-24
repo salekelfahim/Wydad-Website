@@ -37,6 +37,9 @@ Route::get('/playerslist', [PlayerController::class, 'getPlayers'])->name('playe
 
 Route::put('/updateplayer/{id}', [PlayerController::class, 'update'])->name('player.update');
 
+Route::delete('/deleteplayer/{id}', [PlayerController::class, 'delete'])->name('player.delete');
+
+
 Route::get('/addstaff', [StaffController::class, 'Show']);
 Route::post('/addstaff', [StaffController::class, 'AddStaff'])->name('addstaff');
 

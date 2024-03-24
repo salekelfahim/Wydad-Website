@@ -55,7 +55,11 @@
                                     <ul class="list-unstyled mb-0 d-flex justify-content-end">
                                         <li><a href="#" class="text-primary" data-toggle="tooltip" title="" data-original-title="view"><i class="far fa-eye"></i></a></li>
                                         <li data-bs-toggle="modal" data-bs-target="#exampleModal{{$player->id}}" class="text-info" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></li>
-                                        <li><a href="#" class="text-danger" data-toggle="tooltip" title="" data-original-title="Delete"><i class="far fa-trash-alt"></i></a></li>
+                                        <form action="{{ route('player.delete', $player->id) }}" method="POST" style="display: inline-block;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="text-danger" data-toggle="tooltip" title="Delete" onclick="return confirm('Are you sure you want to delete this player?')"><i class="far fa-trash-alt"></i></button>
+                                        </form>
                                     </ul>
                                 </td>
                             </tr>
