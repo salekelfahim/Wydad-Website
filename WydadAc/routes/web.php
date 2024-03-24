@@ -41,3 +41,5 @@ Route::get('/addstaff', [StaffController::class, 'Show']);
 Route::post('/addstaff', [StaffController::class, 'AddStaff'])->name('addstaff');
 
 Route::get('stafflist', [StaffController::class, 'getStaff'])->name('stafflist');
+
+Route::put('/updatestaff/{id}', [StaffController::class, 'update'])->name('staff.update');

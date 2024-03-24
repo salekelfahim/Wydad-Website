@@ -2,6 +2,17 @@
 
 @section('content')
 
+@if(session('success'))
+<div class="alert alert-success" id="alert">
+    {{ session('success') }}
+</div>
+@endif
+
+@if(session('error'))
+<div class="alert alert-danger" id="alert">
+    {{ session('error') }}
+</div>
+@endif
 
 <div style="margin-left: 17%;" class="container mt-3 mb-4">
     <div class="col-lg-9 mt-4 mt-lg-0">
@@ -134,7 +145,7 @@
                                                     @enderror
                                                 </div>
 
-                                            
+
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

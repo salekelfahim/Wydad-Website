@@ -37,5 +37,29 @@ class StaffController extends Controller
         return view('admin.stafflist', compact('staffs'));
     }
 
-    
+    public function update(StaffRequest $request, $id)
+    {
+
+        $staff = Staff::findOrfail($id);
+
+        if (!$staff) {
+            return redirect()->back()->with('error', 'Staff not found.');
+        }
+
+        $staff->firstname = $request->firstname;
+        $staff->lastname = $request->lastname;
+        $staff->birthday = $request->birthday;
+        $staff->nationality = $request->nationality;
+        $staff->mission = $request->mission;
+
+        if ($request->hasFile('picture')) {
+            $staff->picture = $request->file('picture')->store('images', 'public');
+        }
+
+        $staff->save();
+
+        return redirect()->back()->with('success', 'Staff updated successfully.');
+    }
+
+   
 }
