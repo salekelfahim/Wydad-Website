@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Route;
@@ -34,9 +35,7 @@ Route::get('/addplayer', [PlayerController::class, 'Show']);
 Route::post('/addplayer', [PlayerController::class, 'AddPlayer'])->name('addplayer');
 
 Route::get('/playerslist', [PlayerController::class, 'getPlayers'])->name('playerslist');
-
 Route::put('/updateplayer/{id}', [PlayerController::class, 'update'])->name('player.update');
-
 Route::delete('/deleteplayer/{id}', [PlayerController::class, 'delete'])->name('player.delete');
 
 
@@ -48,4 +47,11 @@ Route::get('stafflist', [StaffController::class, 'getStaff'])->name('stafflist')
 Route::put('/updatestaff/{id}', [StaffController::class, 'update'])->name('staff.update');
 
 Route::delete('/deletestaff/{id}', [StaffController::class, 'delete'])->name('staff.delete');
+
+Route::get('/allnews', [NewsController::class, 'getAllNews']);
+Route::post('/addnews', [NewsController::class, 'addNews'])->name('addnews');
+Route::put('/updatenews/{id}', [NewsController::class, 'update'])->name('news.update');
+Route::delete('/deletenews/{id}', [NewsController::class, 'delete'])->name('news.delete');
+
+
 

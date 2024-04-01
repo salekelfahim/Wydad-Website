@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    public function Show()
+    public function getAllNews()
     {
-        return view('admin.addnews');
+        $news = News::all();
+
+        return view('admin.allnews',compact('news'));
     }
 
     public function addNews(Request $request)
@@ -17,8 +19,8 @@ class NewsController extends Controller
         $picture = $request->file('picture')->store('images', 'public');
 
         $news = News::create([
-            'title' => $request->input('number'),
-            'content' => $request->input('position'),
+            'title' => $request->input('title'),
+            'content' => $request->input('content'),
             'picture' => $picture,
         ]);
 
@@ -30,12 +32,5 @@ class NewsController extends Controller
 
         return back()->with('success', 'News Added Successfully!');
 
-    }
-
-    public function getAllNews()
-    {
-        $news = News::all();
-
-        return view('admin.allnews',compact('news'));
     }
 }
