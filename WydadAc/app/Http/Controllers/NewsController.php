@@ -33,4 +33,17 @@ class NewsController extends Controller
         return back()->with('success', 'News Added Successfully!');
 
     }
+
+    public function delete($id)
+    {
+        $news = News::findOrfail($id);
+
+        if (!$news) {
+            return redirect()->back()->with('error', 'News not found.');
+        }
+
+        $news->delete();
+
+        return redirect()->back()->with('success', 'News deleted successfully.');
+    }
 }
