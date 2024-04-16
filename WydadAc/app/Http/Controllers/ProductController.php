@@ -2,11 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Picture;
 use App\Models\Product;
+use App\Models\Productssize;
+use App\Models\Size;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
+    public function Show()
+    {
+        $sizes = Size::get();
+        $types = Type::get();
+        return view('admin.addproduct', compact('sizes', 'types'));
+    }
+
     public function getProducts()
     {
         $products = Product::all();
@@ -18,18 +30,36 @@ class ProductController extends Controller
     {
         $cover = $request->file('cover')->store('images', 'public');
 
-        Product::create([
+        $product = Product::create([
             'name' => $request->input('name'),
-            'quantity' => $request->input('quantity'),
             'price' => $request->input('price'),
             'details' => $request->input('details'),
             'description' => $request->input('description'),
-            'size_id' => $request->input('size'),
             'type_id' => $request->input('type'),
             'cover' => $cover,
         ]);
 
-        return back()->with('success', 'Player Added Successfully!');
+        foreach ($request->file('pictures') as $picture) {
+            $product_id = $product->id;
+            $path = $picture->store('images', 'public');
+
+            Picture::create([
+                'picture' => $path,
+                'product_id' => $product_id,
+            ]);
+        }
+
+        foreach ($request->input('sizes') as $size_id => $quantity) {
+            if ($quantity !== null && $quantity !== '') {
+            Productssize::create([
+                'product_id' => $product->id,
+                'size_id' => $size_id,
+                'quantity' => $quantity,
+            ]);
+        }
+        }
+
+        return back()->with('success', 'Product Added Successfully!');
     }
 
 

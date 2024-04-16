@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,6 +53,10 @@ Route::get('/allnews', [NewsController::class, 'getAllNews']);
 Route::post('/addnews', [NewsController::class, 'addNews'])->name('addnews');
 Route::put('/updatenews/{id}', [NewsController::class, 'update'])->name('news.update');
 Route::delete('/deletenews/{id}', [NewsController::class, 'delete'])->name('news.delete');
+
+Route::get('/addproduct', [ProductController::class, 'Show']);
+Route::post('/addproduct', [ProductController::class, 'AddProduct'])->name('addproduct');
+Route::get('/productslist', [ProductController::class, 'getProducts']);
 
 
 

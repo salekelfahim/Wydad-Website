@@ -41,9 +41,9 @@
 
 
         <div class="mb-3">
-            <label for="firstname" class="form-label">Nationality</label>
+            <label for="nationality" class="form-label">Nationality</label>
             <input type="text" id="nationality" name="nationality" class="form-control">
-            @error('firstname')
+            @error('nationality')
             <div class="alert alert-danger">- {{ $message }}</div>
             @enderror
         </div>
@@ -59,9 +59,9 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="mb-3">
-                    <label for="firstname" class="form-label">Number</label>
+                    <label for="number" class="form-label">Number</label>
                     <input type="number" id="number" name="number" class="form-control">
-                    @error('firstname')
+                    @error('number')
                     <div class="alert alert-danger">- {{ $message }}</div>
                     @enderror
                 </div>
