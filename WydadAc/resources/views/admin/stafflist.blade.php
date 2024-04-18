@@ -41,7 +41,7 @@
                       </div>
                       <div class="candidate-list-option">
                         <ul class="list-unstyled">
-                          <li><i class="fas fa-filter pr-1"></i>{{$staff->mission}}</li>
+                          <li><i class="fas fa-filter pr-1"></i>{{$staff->mission->mission}}</li>
                         </ul>
                       </div>
                     </div>
@@ -115,13 +115,10 @@
                           <div class="mb-3">
                             <label for="mission" class="form-label">Mission</label>
                             <select id="mission" name="mission" class="form-select">
-                              <option value="{{$staff->mission}}">{{$staff->mission}}</option>
-                              <option value="Manager">Manager</option>
-                              <option value="The Assistant Manager">The Assistant Manager</option>
-                              <option value="The Goalkeeping Coach">The Goalkeeping Coach</option>
-                              <option value="Fitness Coach">Fitness Coach</option>
-                              <option value="Docteur">Docteur</option>
-                              <option value="President">President</option>
+                              <option value="{{$staff->mission}}">{{$staff->mission->mission}}</option>
+                              @foreach ($missions as $mission)
+                              <option value="{{$mission->id}}">{{$mission->mission}}</option>
+                              @endforeach
                             </select>
                           </div>
 

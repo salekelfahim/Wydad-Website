@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PlayerRequest;
 use App\Models\Player;
+use App\Models\Position;
 use Illuminate\Http\Request;
 
 class PlayerController extends Controller
 {
     public function Show()
     {
-        return view('admin.addplayer');
+        $positions = Position::all();
+
+        return view('admin.addplayer', compact('positions'));
     }
 
     public function AddPlayer(PlayerRequest $request)
@@ -23,7 +26,7 @@ class PlayerController extends Controller
             'birthday' => $request->input('birthday'),
             'nationality' => $request->input('nationality'),
             'number' => $request->input('number'),
-            'position' => $request->input('position'),
+            'position_id' => $request->input('position'),
             'picture' => $picture,
         ]);
 
@@ -33,8 +36,9 @@ class PlayerController extends Controller
     public function getPlayers()
     {
         $players = Player::all();
+        $positions = Position::all();
 
-        return view('admin.playerslist', compact('players'));
+        return view('admin.playerslist', compact('players', 'positions'));
     }
 
     public function update(PlayerRequest $request, $id)
@@ -51,7 +55,7 @@ class PlayerController extends Controller
         $player->birthday = $request->birthday;
         $player->nationality = $request->nationality;
         $player->number = $request->number;
-        $player->position = $request->position;
+        $player->position_id = $request->position;
 
         if ($request->hasFile('picture')) {
             $player->picture = $request->file('picture')->store('images', 'public');
@@ -67,6 +71,7 @@ class PlayerController extends Controller
         $player = Player::findOrfail($id);
 
         if (!$player) {
+            
             return redirect()->back()->with('error', 'Player not found.');
         }
 

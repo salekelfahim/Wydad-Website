@@ -16,7 +16,12 @@ class Staff extends Model
         'lastname',
         'birthday',
         'nationality',
-        'mission',
+        'mission_id',
         'picture',
     ];
+
+    public function mission()
+    {
+        return $this->belongsTo(Mission::class);
+    }
 }

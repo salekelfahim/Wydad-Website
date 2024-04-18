@@ -61,12 +61,9 @@
         <div class="mb-3">
             <label for="mission" class="form-label">Mission</label>
             <select id="mission" name="mission" class="form-select">
-                <option value="Manager">Manager</option>
-                <option value="The Assistant Manager">The Assistant Manager</option>
-                <option value="The Goalkeeping Coach">The Goalkeeping Coach</option>
-                <option value="Fitness Coach">Fitness Coach</option>
-                <option value="Docteur">Docteur</option>
-                <option value="President">President</option>
+                @foreach ($missions as $mission)
+                <option value="{{$mission->id}}">{{$mission->mission}}</option>
+                @endforeach
             </select>
         </div>
 

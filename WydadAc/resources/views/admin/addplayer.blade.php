@@ -70,10 +70,9 @@
                 <div class="mb-3">
                     <label for="position" class="form-label">Position</label>
                     <select id="position" name="position" class="form-select">
-                        <option value="Goalkeeper">Goalkeeper</option>
-                        <option value="Defender">Defender</option>
-                        <option value="Midfielder">Midfielder</option>
-                        <option value="Forward">Forward</option>
+                        @foreach ($positions as $position)
+                        <option value="{{$position->id}}">{{$position->position}}</option>
+                        @endforeach
                     </select>
                 </div>
 

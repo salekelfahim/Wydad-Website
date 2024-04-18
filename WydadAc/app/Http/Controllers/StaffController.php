@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StaffRequest;
+use App\Models\Mission;
 use App\Models\Staff;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,9 @@ class StaffController extends Controller
 {
     public function Show()
     {
-        return view('admin.addstaff');
+        $missions = Mission::all();
+
+        return view('admin.addstaff', compact('missions'));
     }
 
     public function AddStaff(StaffRequest $request)
@@ -22,7 +25,7 @@ class StaffController extends Controller
             'lastname' => $request->input('lastname'),
             'birthday' => $request->input('birthday'),
             'nationality' => $request->input('nationality'),
-            'mission' => $request->input('mission'),
+            'mission_id' => $request->input('mission'),
             'picture' => $picture,
         ]);
 
@@ -33,8 +36,9 @@ class StaffController extends Controller
     public function getStaff()
     {
         $staffs = Staff::all();
+        $missions = Mission::all();
 
-        return view('admin.stafflist', compact('staffs'));
+        return view('admin.stafflist', compact('staffs', 'missions'));
     }
 
     public function update(StaffRequest $request, $id)
@@ -50,7 +54,7 @@ class StaffController extends Controller
         $staff->lastname = $request->lastname;
         $staff->birthday = $request->birthday;
         $staff->nationality = $request->nationality;
-        $staff->mission = $request->mission;
+        $staff->mission_id = $request->mission;
 
         if ($request->hasFile('picture')) {
             $staff->picture = $request->file('picture')->store('images', 'public');

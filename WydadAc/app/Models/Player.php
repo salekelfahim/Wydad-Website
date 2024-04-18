@@ -17,7 +17,12 @@ class Player extends Model
         'birthday',
         'nationality',
         'number',
-        'position',
+        'position_id',
         'picture',
     ];
+
+    public function position()
+    {
+        return $this->belongsTo(Position::class);
+    }
 }

@@ -41,7 +41,7 @@
                                             </div>
                                             <div class="candidate-list-option">
                                                 <ul class="list-unstyled">
-                                                    <li><i class="fas fa-filter pr-1"></i>{{$player->position}}</li>
+                                                    <li><i class="fas fa-filter pr-1"></i>{{$player->position->position}}</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -52,7 +52,7 @@
                                     <span class="candidate-list-time order-1">Shortlisted</span>
                                 </td>
                                 <td>
-                                    <ul class="list-unstyled mb-0 d-flex justify-content-end">
+                                    <ul class="list-unstyled mb-0 d-flex">
                                         <li><a href="#" class="text-primary" data-toggle="tooltip" title="" data-original-title="view"><i class="far fa-eye"></i></a></li>
                                         <li data-bs-toggle="modal" data-bs-target="#exampleModal{{$player->id}}" class="text-info" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></li>
                                         <form action="{{ route('player.delete', $player->id) }}" method="POST" style="display: inline-block;">
@@ -128,11 +128,10 @@
                                                         <div class="mb-3">
                                                             <label for="position" class="form-label">Position</label>
                                                             <select id="position" name="position" class="form-select">
-                                                                <option value="{{$player->position}}">{{$player->position}}</option>
-                                                                <option value="Goalkeeper">Goalkeeper</option>
-                                                                <option value="Defender">Defender</option>
-                                                                <option value="Midfielder">Midfielder</option>
-                                                                <option value="Forward">Forward</option>
+                                                                <option value="{{$player->position->id}}">{{$player->position->position}}</option>
+                                                                @foreach ($positions as $position)
+                                                                <option value="{{$position->id}}">{{$position->position}}</option>
+                                                                @endforeach
                                                             </select>
                                                         </div>
 
