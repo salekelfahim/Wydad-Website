@@ -60,6 +60,9 @@ Route::post('/addproduct', [ProductController::class, 'AddProduct'])->name('addp
 Route::get('/productslist', [ProductController::class, 'getProducts']);
 
 Route::get('/gameslist', [GameController::class, 'getGames']);
+Route::post('/addgame', [GameController::class, 'addGame'])->name('addgame');
+Route::put('/updategame/{id}', [GameController::class, 'update'])->name('game.update');
+Route::delete('/deletegame/{id}', [GameController::class, 'delete'])->name('game.delete');
 
 
 

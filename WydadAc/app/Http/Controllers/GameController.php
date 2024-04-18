@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Compitition;
 use App\Models\Game;
 use Illuminate\Http\Request;
 
@@ -10,8 +11,9 @@ class GameController extends Controller
     public function getGames()
     {
         $games = Game::all();
+        $compititions = Compitition::all();
 
-        return view('admin.gameslist', compact('games'));
+        return view('admin.gameslist', compact('games', 'compititions'));
     }
 
     public function addGame(Request $request)
@@ -20,7 +22,7 @@ class GameController extends Controller
         $game = Game::create([
             'date' => $request->input('date'),
             'opponent' => $request->input('opponent'),
-            'compitition' => $request->input('compitition'),
+            'compitition_id' => $request->input('compitition'),
             'status' => $request->input('status'),
             'stadium' => $request->input('stadium'),
         ]);
@@ -43,7 +45,7 @@ class GameController extends Controller
 
         $game->date = $request->date;
         $game->opponent = $request->opponent;
-        $game->compitition = $request->compitition;
+        $game->compitition_id = $request->compitition;
         $game->status = $request->status;
         $game->stadium = $request->stadium;
 
