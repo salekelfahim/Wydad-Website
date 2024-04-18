@@ -41,52 +41,29 @@
                     <a class="active" href="/dashboard"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
                 </li>
                 <li>
-                    <a class="show-cat-btn" href="/addplayer">
-                        <span class="icon document" aria-hidden="true"></span>Player
-                        <span class="category__btn transparent-btn" title="Open list">
-                            <span class="sr-only">Open list</span>
-                            <span class="icon arrow-down" aria-hidden="true"></span>
-                        </span>
+                    <a class="show-cat-btn" href="/playerslist">
+                        <span class="icon document" aria-hidden="true"></span>Players
                     </a>
-                    <ul class="cat-sub-menu">
-                        <li>
-                            <a href="posts.html">All Posts</a>
-                        </li>
-                        <li>
-                            <a href="new-post.html">Add new post</a>
-                        </li>
-                    </ul>
                 </li>
                 <li>
-                    <a class="show-cat-btn" href="/addstaff">
+                    <a class="show-cat-btn" href="/stafflist">
                         <span class="icon folder" aria-hidden="true"></span>Staff
-                        <span class="category__btn transparent-btn" title="Open list">
-                            <span class="sr-only">Open list</span>
-                            <span class="icon arrow-down" aria-hidden="true"></span>
-                        </span>
                     </a>
-                    <ul class="cat-sub-menu">
-                        <li>
-                            <a href="categories.html">All categories</a>
-                        </li>
-                    </ul>
                 </li>
                 <li>
-                    <a class="show-cat-btn" href="##">
-                        <span class="icon image" aria-hidden="true"></span>Media
-                        <span class="category__btn transparent-btn" title="Open list">
-                            <span class="sr-only">Open list</span>
-                            <span class="icon arrow-down" aria-hidden="true"></span>
-                        </span>
+                    <a class="show-cat-btn" href="/productslist">
+                        <span class="icon document" aria-hidden="true"></span>Products
                     </a>
-                    <ul class="cat-sub-menu">
-                        <li>
-                            <a href="media-01.html">Media-01</a>
-                        </li>
-                        <li>
-                            <a href="media-02.html">Media-02</a>
-                        </li>
-                    </ul>
+                </li>
+                <li>
+                    <a class="show-cat-btn" href="/stafflist">
+                        <span class="icon folder" aria-hidden="true"></span>Staff
+                    </a>
+                </li>
+                <li>
+                    <a class="show-cat-btn" href="/gameslist">
+                        <span class="icon folder" aria-hidden="true"></span>Games
+                    </a>
                 </li>
                 <li>
                     <a class="show-cat-btn" href="##">

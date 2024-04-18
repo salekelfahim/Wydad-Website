@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GameController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\ProductController;
@@ -57,6 +58,9 @@ Route::delete('/deletenews/{id}', [NewsController::class, 'delete'])->name('news
 Route::get('/addproduct', [ProductController::class, 'Show']);
 Route::post('/addproduct', [ProductController::class, 'AddProduct'])->name('addproduct');
 Route::get('/productslist', [ProductController::class, 'getProducts']);
+
+Route::get('/gameslist', [GameController::class, 'getGames']);
+
 
 
 

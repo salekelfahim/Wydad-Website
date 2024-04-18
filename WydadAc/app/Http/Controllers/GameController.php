@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
-    public function getAllGames()
+    public function getGames()
     {
         $games = Game::all();
 
-        return view('admin.allgames', compact('games'));
+        return view('admin.gameslist', compact('games'));
     }
 
     public function addGame(Request $request)
