@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 
 class PlayerController extends Controller
 {
+    public function index()
+    {
+        $players = Player::all();
+
+        return view('players', compact('players'));
+    }
+
     public function Show()
     {
         $positions = Position::all();
@@ -78,5 +85,20 @@ class PlayerController extends Controller
         $player->delete();
 
         return redirect()->back()->with('success', 'Player deleted successfully.');
+    }
+
+    public function searchPlayers(Request $request)
+    {
+        $keyword = $request->input('title_s');
+        if ($keyword === '') {
+            $players = Player::get();
+        } else {
+
+            $players = Player::where('firstname', 'like', '%' . $keyword . '%')
+                ->orWhere('lastname', 'like', '%' . $keyword . '%')
+                ->get();
+        }
+
+        return view('search')->with(['players' => $players, 'keyword' => $keyword]);
     }
 }

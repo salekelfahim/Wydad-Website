@@ -22,4 +22,9 @@ class Product extends Model
     {
         return $this->belongsTo(Type::class);
     }
+
+    public function size()
+    {
+        return $this->Hasmany(Productssize::class);
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Panier;
 use App\Models\Picture;
 use App\Models\Product;
 use App\Models\Productssize;
@@ -11,6 +12,18 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function ProductDetails($id)
+    {
+        $product = Product::findOrfail($id);
+        $images = Picture::where('product_id', $id)->get();
+        $sizes = Productssize::where('product_id', $id)->get();
+        // foreach ($sizes as $size){
+        //     foreach ($size->size as $sizz){
+        // dd($sizz->id);
+        // }
+    // }
+        return view('product', compact('product', 'images', 'sizes'));
+    }
 
     public function Show()
     {
@@ -62,32 +75,6 @@ class ProductController extends Controller
         return back()->with('success', 'Product Added Successfully!');
     }
 
-
-    // public function update(Request $request, $id)
-    // {
-
-    //     $Product = Product::find($id);
-
-    //     if (!$Product) {
-    //         return redirect()->back()->with('error', 'Product not found.');
-    //     }
-
-    //     $Product->firstname = $request->firstname;
-    //     $Product->lastname = $request->lastname;
-    //     $Product->birthday = $request->birthday;
-    //     $Product->nationality = $request->nationality;
-    //     $Product->number = $request->number;
-    //     $Product->position = $request->position;
-
-    //     if ($request->hasFile('cover')) {
-    //         $Product->cover = $request->file('cover')->store('images', 'public');
-    //     }
-
-    //     $Product->save();
-
-    //     return redirect()->back()->with('success', 'Product updated successfully.');
-    // }
-
     public function delete($id)
     {
         $product = Product::findOrfail($id);
@@ -99,5 +86,17 @@ class ProductController extends Controller
         $product->delete();
 
         return redirect()->back()->with('success', 'Product deleted successfully.');
+    }
+
+    public function BuyProducts(Request $request)
+    {
+        $product = Product::findOrfail($request->input('product'));
+
+        $buy = Panier::create([
+            'product_id' => $product,
+            'user_id' => 1,
+            'quantity' => $request->input('quantity')
+        ]);
+        return back()->with('success', 'Product Bought Successfully!');
     }
 }

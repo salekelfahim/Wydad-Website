@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
+    public function NewsDetails($id)
+    {
+        $news = News::findOrfail($id);
+
+        return view('news',compact('news'));
+    }
+
     public function getAllNews()
     {
         $news = News::all();

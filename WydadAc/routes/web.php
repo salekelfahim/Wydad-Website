@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\TicketController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,13 +21,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('accueil');
-})->name('welcome');
+// Route::get('/', function () {
+//     return view('accueil');
+// })->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 })->name('dashboard');
+
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 Route::get('/auth', [AuthController::class, 'ShowForm'])->name('auth');
 
@@ -36,9 +40,13 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/addplayer', [PlayerController::class, 'Show']);
 Route::post('/addplayer', [PlayerController::class, 'AddPlayer'])->name('addplayer');
 
+Route::get('/players', [PlayerController::class, 'index']);
 Route::get('/playerslist', [PlayerController::class, 'getPlayers'])->name('playerslist');
 Route::put('/updateplayer/{id}', [PlayerController::class, 'update'])->name('player.update');
 Route::delete('/deleteplayer/{id}', [PlayerController::class, 'delete'])->name('player.delete');
+
+Route::get('/search', [PlayerController::class, 'searchPlayers'])->name('search');
+
 
 
 Route::get('/addstaff', [StaffController::class, 'Show']);
@@ -54,15 +62,26 @@ Route::get('/allnews', [NewsController::class, 'getAllNews']);
 Route::post('/addnews', [NewsController::class, 'addNews'])->name('addnews');
 Route::put('/updatenews/{id}', [NewsController::class, 'update'])->name('news.update');
 Route::delete('/deletenews/{id}', [NewsController::class, 'delete'])->name('news.delete');
+Route::get('/news/{id}', [NewsController::class, 'NewsDetails'])->name('news.details');
 
+
+Route::get('/product/{id}', [ProductController::class, 'ProductDetails'])->name('product.details');
 Route::get('/addproduct', [ProductController::class, 'Show']);
 Route::post('/addproduct', [ProductController::class, 'AddProduct'])->name('addproduct');
 Route::get('/productslist', [ProductController::class, 'getProducts']);
 
+Route::post('/buyproduct', [ProductController::class, 'BuyProducts'])->name('buyproduct');
+
+
+Route::get('/games', [GameController::class, 'index']);
 Route::get('/gameslist', [GameController::class, 'getGames']);
 Route::post('/addgame', [GameController::class, 'addGame'])->name('addgame');
 Route::put('/updategame/{id}', [GameController::class, 'update'])->name('game.update');
 Route::delete('/deletegame/{id}', [GameController::class, 'delete'])->name('game.delete');
+
+Route::post('/addticket', [TicketController::class, 'CreateTickets'])->name('tickets.create');
+
+
 
 
 

@@ -64,6 +64,7 @@
                                 </td>
                                 <td>
                                     <ul class="list-unstyled mb-0 d-flex">
+                                        <li data-bs-toggle="modal" data-bs-target="#ticketModal{{$game->id}}" class="text-primary" data-toggle="tooltip" title="" data-original-title="view"><i class="fas fa-ticket-alt"></i></li>
                                         <li data-bs-toggle="modal" data-bs-target="#EditModal{{$game->id}}" class="text-info" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></li>
                                         <form action="{{ route('game.delete', $game->id) }}" method="POST" style="display: inline-block;">
                                             @csrf
@@ -149,8 +150,59 @@
                                 </div>
                             </div>
 
+                            <!-- Tickets Modal -->
+                            <div class="modal fade" id="ticketModal{{$game->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Tickets</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form method="post" class="mx-auto" action="{{ route('tickets.create') }}" style="width: 55%;">
+                                                @csrf
+                                                <input type="hidden" name="game_id" value="{{ $game->id }}">
+                                                <div class="row">
+                                                    <div class="mb-3">
+                                                        <label for="form4Example1" class="form-label">Number of Tickets:</label>
+                                                        <input type="number" id="nTickets" name="nTickets" class="form-control">
+                                                        @error('nTickets')
+                                                        <div class="alert alert-danger">- {{ $message }}</div>
+                                                        @enderror
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <label for="form4Example3" class="form-label">Price: (DH)</label>
+                                                        <input type="number" step="0.01" id="price" name="price" class="form-control">
+                                                        @error('price')
+                                                        <div class="alert alert-danger">- {{ $message }}</div>
+                                                        @enderror
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <label for="form4Example3" class="form-label">Category:</label>
+                                                        <select name="category" id="category">
+                                                            @foreach ($categories as $category)
+                                                            <option value="{{$category->id}}">{{$category->category}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-dark">Add Tickets</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
 
                             @endforeach
+
+
                             <!--  Add Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
@@ -223,6 +275,9 @@
                                     </div>
                                 </div>
                             </div>
+
+
+
 
 
                 </div>

@@ -2,18 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Compitition;
 use App\Models\Game;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
+    public function index()
+    {
+        $games = Game::whereDate('date', '>', now())->get();
+         
+        return view('games', compact('games'));
+    }
+
     public function getGames()
     {
         $games = Game::all();
         $compititions = Compitition::all();
+        $categories = Category::all();
 
-        return view('admin.gameslist', compact('games', 'compititions'));
+        return view('admin.gameslist', compact('games', 'compititions', 'categories'));
     }
 
     public function addGame(Request $request)
