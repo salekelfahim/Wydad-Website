@@ -117,7 +117,7 @@
           <div class="display-header d-flex justify-content-between pb-3">
             <h2 class="display-7 text-dark text-uppercase">Our Products</h2>
             <div class="btn-right">
-              <a href="/product" class="btn btn-medium btn-normal text-uppercase">Go to Shop</a>
+              <a href="/products" class="btn btn-medium btn-normal text-uppercase">Go to Shop</a>
             </div>
           </div>
             <div class="swiper-wrapper d-flex justify-content-between">

@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-interface AuthServiceInterface
+interface UserServiceInterface
 {
     public function register(array $user);
 

@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
-use App\Repositories\AuthRepository;
-use App\Repositories\AuthRepositoryInterface;
-use App\Services\authService;
-use App\Services\AuthServiceInterface;
+use App\Repositories\UserRepository;
+use App\Repositories\UserRepositoryInterface;
+use App\Services\UserService;
+use App\Services\UserServiceInterface;
 use Dotenv\Validator;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
@@ -16,11 +16,11 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    protected $authServiceinterface;
+    protected $userServiceinterface;
 
-    public function __construct(AuthServiceInterface $authServiceinterface)
+    public function __construct(UserServiceInterface $userServiceinterface)
     {
-        $this->authServiceinterface = $authServiceinterface;
+        $this->userServiceinterface = $userServiceinterface;
     }
 
 
@@ -39,7 +39,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->input('password')),
         ];
 
-        $create = $this->authServiceinterface->register($user);
+        $create = $this->userServiceinterface->register($user);
 
         if($create){
 
@@ -57,10 +57,10 @@ class AuthController extends Controller
         $email = $request->input('email');
         $password = $request->input('password');
 
-        $user = $this->authServiceinterface->login($email,$password);
+        $user = $this->userServiceinterface->login($email,$password);
 
         if ($user){
-            
+
             return redirect()->route('index');
         }
 

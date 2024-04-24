@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use App\Repositories\AuthRepository;
-use App\Repositories\AuthRepositoryInterface;
-use App\Services\AuthService;
-use App\Services\AuthServiceInterface;
+use App\Repositories\UserRepository;
+use App\Repositories\UserRepositoryInterface;
+use App\Services\UserService;
+use App\Services\UserServiceInterface;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Pagination\Paginator;
@@ -19,8 +19,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(AuthServiceInterface::class, AuthService::class);
-        $this->app->bind(AuthRepositoryInterface::class, AuthRepository::class);
+        $this->app->bind(UserServiceInterface::class, UserService::class);
+        $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
         Schema::defaultStringLength(750);
 
       

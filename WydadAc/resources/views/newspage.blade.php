@@ -7,8 +7,8 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="welcome-page">
-                <h2 class="mb-1 display-5 text-center">Our Team</h2>
-                <p>You Can See All the First TeamPlayers Here! Thank You.</p>
+                <h2 class="mb-1 display-5 text-center">News</h2>
+                <p>You Can See latest News About Our Team.</p>
             </div>
         </div>
         <div class="row mt-5">            @foreach($newss as $news)

@@ -5,7 +5,7 @@ namespace App\Repositories;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-class AuthRepository implements AuthRepositoryInterface
+class UserRepository implements UserRepositoryInterface
 {
     public function register(array $user)
     {

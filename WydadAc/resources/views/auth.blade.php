@@ -74,11 +74,11 @@
                 @if($errors->has('email'))
                 <p style="color: red;">{{ $errors->first('email') }}</p>
                 @endif
-                <input name="email" type="email" placeholder="Email">
+                <input id="email" name="email" type="email" placeholder="Email">
                 @if($errors->has('password'))
                 <p style="color: red;">{{ $errors->first('password') }}</p>
                 @endif
-                <input name="password" type="password" placeholder="Password">
+                <input id="password" name="password" type="password" placeholder="Password">
                 <a href="#">Forget Your Password?</a>
                 <button>Sign In</button>
             </form>

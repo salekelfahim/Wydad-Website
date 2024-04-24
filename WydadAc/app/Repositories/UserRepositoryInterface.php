@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 
-interface AuthRepositoryInterface
+interface UserRepositoryInterface
 {
     public function register(array $user);
 
