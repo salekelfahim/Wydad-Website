@@ -67,12 +67,15 @@
 
           <hr />
             <form action="{{route ('buyproduct')}}" method="post">
+            @csrf
                 <input type="hidden" name="product" value="{{$product->id}}">
           <div class="row mb-4">
             <div class="col-md-4 col-6">
               <label class="mb-2">Size</label>
               <select class="form-select border border-secondary" name="size" style="height: 35px;">
-                <option value="1">S</option>
+              @foreach ($sizes as $size)
+                <option value="{{$size->id}}">{{$size->size}}</option>
+                @endforeach
               </select>
             </div>
             <!-- col.// -->
@@ -192,51 +195,20 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Similar items</h5>
+              @foreach ($products as $product)
               <div class="d-flex mb-3">
-                <a href="#" class="me-3">
-                  <img src="https://mdbcdn.b-cdn.net/img/bootstrap-ecommerce/items/8.webp" style="min-width: 96px; height: 96px;" class="img-md img-thumbnail" />
+                <a href="{{ route('product.details', $product->id) }}" class="me-3">
+                  <img src="{{ asset('storage/' . $product->cover) }}" style="min-width: 96px; height: 96px;" class="img-md img-thumbnail" />
                 </a>
                 <div class="info">
-                  <a href="#" class="nav-link mb-1">
-                    Rucksack Backpack Large <br />
-                    Line Mounts
+                  <a href="{{ route('product.details', $product->id) }}" class="nav-link mb-1">
+                    {{$product->name}} <br />
+                    {{$product->type->types}}
                   </a>
-                  <strong class="text-dark"> $38.90</strong>
+                  <strong class="text-dark"> {{$product->price}} DH</strong>
                 </div>
               </div>
-
-              <div class="d-flex mb-3">
-                <a href="#" class="me-3">
-                  <img src="https://mdbcdn.b-cdn.net/img/bootstrap-ecommerce/items/9.webp" style="min-width: 96px; height: 96px;" class="img-md img-thumbnail" />
-                </a>
-                <div class="info">
-                  <a href="#" class="nav-link mb-1">
-                    Summer New Men's Denim <br />
-                    Jeans Shorts
-                  </a>
-                  <strong class="text-dark"> $29.50</strong>
-                </div>
-              </div>
-
-              <div class="d-flex mb-3">
-                <a href="#" class="me-3">
-                  <img src="https://mdbcdn.b-cdn.net/img/bootstrap-ecommerce/items/10.webp" style="min-width: 96px; height: 96px;" class="img-md img-thumbnail" />
-                </a>
-                <div class="info">
-                  <a href="#" class="nav-link mb-1"> T-shirts with multiple colors, for men and lady </a>
-                  <strong class="text-dark"> $120.00</strong>
-                </div>
-              </div>
-
-              <div class="d-flex">
-                <a href="#" class="me-3">
-                  <img src="https://mdbcdn.b-cdn.net/img/bootstrap-ecommerce/items/11.webp" style="min-width: 96px; height: 96px;" class="img-md img-thumbnail" />
-                </a>
-                <div class="info">
-                  <a href="#" class="nav-link mb-1"> Blazer Suit Dress Jacket for Men, Blue color </a>
-                  <strong class="text-dark"> $339.90</strong>
-                </div>
-              </div>
+              @endforeach
             </div>
           </div>
         </div>

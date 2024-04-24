@@ -25,7 +25,7 @@
   <div class="container overflow-hidden">
     <div id="search_result" class="row gy-4 gy-lg-0 gx-xxl-5">
         @foreach ($players as $player)
-      <div class="col-12 col-md-6 col-lg-3">
+      <div class="col-12 col-md-6 col-lg-3 mb-5">
         <div class="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
           <div class="card-body p-0">
             <figure class="m-0 p-0">
@@ -41,6 +41,8 @@
    @endforeach
     </div>
   </div>
+
+  {{$players->links()}}
 </section>
 
 

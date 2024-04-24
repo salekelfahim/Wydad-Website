@@ -2,72 +2,67 @@
 
 @section('content')
 
-<div class="welcome-page">
-    <h2 class="welcome-message">Add New Event</h2>
-    <p>You Can Add Your Event Here! Thank You.</p>
-</div>
-
-<div class="container mt-5" style="margin-bottom: 20%;">
-            <div class="row">
-                <div class="col-lg-8">
-                    <!-- Post content-->
-                    <article>
-                        <!-- Post header-->
-                        <header class="mb-4">
-                            <!-- Post title-->
-                            <h1 class="fw-bolder mb-1">{{$news->title}}</h1>
-                            <!-- Post meta content-->
-                            <div class="text-muted fst-italic mb-2">Posted on January 1, 2023 by Start Bootstrap</div>
-                        </header>
-                        <!-- Preview image figure-->
-                        <figure class="mb-4"><img class="img-fluid rounded" src="{{ asset('storage/' . $news->picture) }}" alt="..." /></figure>
-                        <!-- Post content-->
-                        <section class="mb-5">
-                            <p class="fs-5 mb-4">{{$news->content}}</p>
-                        </section>
-                    </article>
-                </div>
-                <!-- Side widgets-->
-                <div class="col-lg-4">
-                    <!-- Search widget-->
-                    <div class="card mb-4">
-                        <div class="card-header">Search</div>
-                        <div class="card-body">
-                            <div class="input-group">
-                                <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                                <button class="btn btn-primary" id="button-search" type="button">Go!</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Categories widget-->
-                    <div class="card mb-4">
-                        <div class="card-header">Categories</div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><a href="#!">Web Design</a></li>
-                                        <li><a href="#!">HTML</a></li>
-                                        <li><a href="#!">Freebies</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><a href="#!">JavaScript</a></li>
-                                        <li><a href="#!">CSS</a></li>
-                                        <li><a href="#!">Tutorials</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Side widget-->
-                    <div class="card mb-4">
-                        <div class="card-header">Side Widget</div>
-                        <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
-                    </div>
-                </div>
+<section class="ezy__blog4">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="ezy__blog4-heading mb-3 mt-0">Heal the world with banking blog.</h2>
+                <p class="ezy__blog4-sub-heading px-lg-5 mb-4">
+                    Banking crises have developed many times throughout history when one or more risks have emerged.
+                </p>
+                <a href="" class="btn btn-warning ezy__blog4-btn">All Posts</a>
             </div>
         </div>
 
-        @endsection
+        <div class="row align-items-center mt-5">
+            <div class="col-12 mb-4">
+                <article class="ezy__blog4-featured-post">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7">
+                            <img src="{{ asset('storage/' . $news->picture) }}" alt="" class="img-fluid rounded-3" />
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="mt-4 mt-lg-0 ps-lg-4">
+                                <h4 class="ezy__blog4-title mb-2">
+                                    {{$news->title}}
+                                </h4>
+                                <p class="ezy__blog4-description mt-3 mb-4">
+                                    {{$news->content}}
+                                </p>
+                                <div class="ezy__blog4-author d-flex align-items-center">
+                                    <div>
+                                        <p class="mb-0 small opacity-75"> {{ \Carbon\Carbon::parse($news->created_at)->format('d M Y') }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="display-header d-flex justify-content-between pb-3">
+            <h2 class="display-7 text-dark text-uppercase">Latest Posts</h2>
+            <div class="btn-right">
+              <a href="blog.html" class="btn btn-medium btn-normal text-uppercase">Read Blog</a>
+            </div>
+          </div>
+            @foreach($newss as $news)
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="ezy__blog4-post rounded overflow-hidden mt-4 h-100">
+                    <img src="{{ asset('storage/' . $news->picture) }}" alt="" class="img-fluid w-100" />
+                    <div class="p-3 p-lg-4">
+                        <h4 class="ezy__blog4-title fs-4 mb-1">{{$news->title}} </h4>
+                        <p class="ezy__blog4-author">
+                            <span><i class="far fa-clock me-1"></i> <span> {{ \Carbon\Carbon::parse($news->created_at)->format('d M Y') }}
+                                </span></span>
+                        </p>
+                        <a href="{{ route('news.details', $news->id ) }}" class="btn ezy__blog4-btn-read-more">Read More</a>
+                    </div>
+                </article>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+@endsection

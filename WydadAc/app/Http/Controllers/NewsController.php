@@ -10,8 +10,17 @@ class NewsController extends Controller
     public function NewsDetails($id)
     {
         $news = News::findOrfail($id);
+        $newss = News::orderBy('created_at', 'desc')->paginate(3);
 
-        return view('news',compact('news'));
+
+        return view('news',compact('news', 'newss'));
+    }
+
+    public function getNews()
+    {
+        $newss = News::orderBy('created_at', 'desc')->get();
+
+        return view('newspage',compact('newss'));
     }
 
     public function getAllNews()

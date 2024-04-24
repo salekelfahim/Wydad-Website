@@ -12,10 +12,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $products = Product::paginate(3);
+        $products = Product::orderBy('created_at', 'desc')->paginate(3);
         $players = Player::paginate(3);
         $staffs = Staff::paginate(3);
-        $newss = News::paginate(3);
+        $newss = News::orderBy('created_at', 'desc')->paginate(3);
 
         return view('accueil', compact('products', 'players', 'staffs', 'newss'));
     }

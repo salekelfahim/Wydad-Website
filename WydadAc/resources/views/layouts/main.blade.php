@@ -163,7 +163,7 @@
                 <a class="nav-link me-4" href="#company-services">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link me-4" href="#mobile-products">Products</a>
+                <a class="nav-link me-4" href="/products">Products</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link me-4" href="/players">Players</a>
@@ -172,7 +172,7 @@
                 <a class="nav-link me-4" href="#yearly-sale">Games</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link me-4" href="#yearly-sale">News</a>
+                <a class="nav-link me-4" href="/newspage">News</a>
               </li>
               <li class="nav-item">
                 <div class="user-items ps-5">

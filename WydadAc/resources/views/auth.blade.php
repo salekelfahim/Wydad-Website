@@ -31,22 +31,26 @@
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email for registeration</span>
-                <input name="firstname" type="text" placeholder="First Name">
+                <input id="firstname" name="firstname" type="text" placeholder="First Name">
                 @if($errors->has('firstname'))
                 <p style="color: red;">{{ $errors->first('firstname') }}</p>
                 @endif
-                <input name="lastname" type="text" placeholder="Last Name">
+                <div id="firstnameError" class="error-message text-danger small"></div>
+                <input id="lastname" name="lastname" type="text" placeholder="Last Name">
                 @if($errors->has('lastname'))
                 <p style="color: red;">{{ $errors->first('lastname') }}</p>
                 @endif
-                <input name="email" type="email" placeholder="Email">
+                <div id="lastnameError" class="error-message text-danger small"></div>
+                <input id="email" name="email" type="email" placeholder="Email">
                 @if($errors->has('email'))
                 <p style="color: red;">{{ $errors->first('email') }}</p>
                 @endif
-                <input name="password" type="password" placeholder="Password">
+                <div id="emailError" class="error-message text-danger small"></div>
+                <input id="password" name="password" type="password" placeholder="Password">
                 @if($errors->has('password'))
                 <p style="color: red;">{{ $errors->first('password') }}</p>
                 @endif
+                <div id="passwordError" class="error-message text-danger small"></div>
                 <input type="password" name="password_confirmation" placeholder="Confirm Password">
                 <button>Sign Up</button>
             </form>
