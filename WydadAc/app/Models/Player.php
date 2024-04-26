@@ -8,13 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Player extends Model
 {
     use HasFactory;
+
+    public $timestamps = false;
+
     protected $fillable = [
         'firstname',
         'lastname',
         'birthday',
         'nationality',
         'number',
-        'position',
+        'position_id',
         'picture',
     ];
+
+    public function position()
+    {
+        return $this->belongsTo(Position::class);
+    }
 }
