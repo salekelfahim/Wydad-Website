@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReservationsController;
@@ -93,4 +94,5 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/myreservations/{id}', [ReservationsController::class, 'MyReservations'])->name('myreservations');
 
+    Route::get('/generate-pdf/{id}', [PDFController::class, 'generatePDF'])->name('generatePDF');
 });

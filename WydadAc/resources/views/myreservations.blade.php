@@ -75,10 +75,9 @@
               </div>
             </div>
             <div class="col-12 col-lg-5">
-              <div
+              <a href="{{ route('generatePDF', ['id' => $ticket->id]) }}"
                 class="ezy__careers11-tags d-flex align-items-center justify-content-center justify-content-lg-end mt-2 mt-lg-0">
-                <p>Bought</p>
-              </div>
+                <p>Get Ticket</p></a>
             </div>
             <div class="col-12 col-lg-3">
               <div class="d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0">
