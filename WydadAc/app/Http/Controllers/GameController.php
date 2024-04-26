@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GameRequest;
 use App\Models\Category;
 use App\Models\Compitition;
 use App\Models\Game;
@@ -32,7 +33,7 @@ class GameController extends Controller
         return view('admin.gameslist', compact('games', 'compititions', 'categories'));
     }
 
-    public function addGame(Request $request)
+    public function addGame(GameRequest $request)
     {
 
         $game = Game::create([

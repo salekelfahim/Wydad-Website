@@ -2,6 +2,9 @@
 
 @section('content')
 
+<div class="welcome-page">
+</div>
+
 @if(session('success'))
 <div class="alert alert-success" id="alert">
     {{ session('success') }}
@@ -13,10 +16,6 @@
     {{ session('error') }}
 </div>
 @endif
-<div class="welcome-page">
-        <h2 class="mb-1 display-5 text-center">Our Team</h2>
-    <p>You Can See All the First TeamPlayers Here! Thank You.</p>
-</div>
 <section class="py-5">
   <div class="container">
     <div class="row gx-5">
@@ -52,7 +51,6 @@
                 4.5
               </span>
             </div>
-            <span class="text-muted"><i class="fas fa-shopping-basket fa-sm mx-1"></i>154 orders</span>
             <span class="text-success ms-2">In stock</span>
           </div>
 
@@ -87,8 +85,6 @@
             </div>
           </div>
           <button type="submit" class="btn btn-warning shadow-0"> Buy now </button>
-          <a href="#" class="btn btn-primary shadow-0"> <i class="me-1 fa fa-shopping-basket"></i> Add to cart </a>
-          <a href="#" class="btn btn-light border border-secondary py-2 icon-hover px-3"> <i class="me-1 fa fa-heart fa-lg"></i> Save </a>
           </form>
         </div>
       </main>

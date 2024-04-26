@@ -1432,6 +1432,230 @@ CSS STRUCTURE:
     color: #333;
 }
 
+.ezy__careers11 {
+  /* Bootstrap variables */
+  --bs-body-color: #101113;
+  --bs-body-bg: #fff;
+
+  /* easy frontend variables */
+  --ezy-theme-color: rgb(145, 145, 145);
+  --ezy-theme-color-rgb: 13, 110, 253;
+  --ezy-card-bg:rgb(255,255,255);
+  --ezy-box-shadow:  0px 6px 44px rgba(173, 174, 197, 0.2);
+
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  padding: 60px 0;
+}
+
+@media (min-width: 768px) {
+  .ezy__careers11 {
+    padding: 100px 0;
+  }
+}
+
+/* Gray Block Style */
+.gray .ezy__careers11,
+.ezy__careers11.gray {
+  /* Bootstrap variables */
+  --bs-body-bg: rgb(246, 246, 246);
+}
+
+/* Dark Gray Block Style */
+.dark-gray .ezy__careers11,
+.ezy__careers11.dark-gray {
+  /* Bootstrap variables */
+  --bs-body-color: rgb(241, 241, 241);
+  --bs-body-bg: rgb(30, 39, 53);
+
+  /* easy frontend variables */
+  --ezy-card-bg:rgb(11, 23, 39);
+  --ezy-box-shadow:  0px 6px 44px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Block Style */
+.dark .ezy__careers11,
+.ezy__careers11.dark {
+  /* Bootstrap variables */
+  --bs-body-color: rgb(255, 255, 255);
+  --bs-body-bg: rgb(11, 23, 39);
+
+  /* easy frontend variables */
+  --ezy-card-bg:rgb(30, 39, 53);
+  --ezy-box-shadow:  0px 6px 44px rgba(0, 0, 0, 0.2);
+}
+
+/* heading and sub-heading */
+.ezy__careers11-heading {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1;
+  color: var(--bs-body-color);
+}
+
+@media (min-width: 991px) {
+  .ezy__careers11-heading {
+    font-size: 45px;
+  }
+}
+
+.ezy__careers11-btn {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  border: 0;
+  font-weight: 500;
+  padding: 0;
+  transition: 0.5s;
+}
+.ezy__careers11-btn:hover {
+  color: var(--ezy-theme-color);
+}
+
+.ezy__careers11-card {
+  background-color: var(--ezy-card-bg);
+  box-shadow: var(--ezy-box-shadow);
+  margin-top: 50px;
+  transition: 0.4s;
+}
+.ezy__careers11-card:hover {
+  background-color: rgba(var(--ezy-theme-color-rgb), 0.2);
+}
+@media (min-width: 991px) {
+  .ezy__careers11-card {
+  margin-top: 30px;
+}
+}
+
+.ezy__careers11-logo {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  transform: translateX(-50%);
+}
+@media (min-width: 991px) {
+  .ezy__careers11-logo {
+    top: 50%;
+    left: -40px;
+    transform: translateY(-50%);
+  }
+}
+.ezy__careers11-logo img {
+  width: 40px;
+  height: auto;
+}
+.ezy__careers11-card a {
+  text-decoration: none;
+  color: var(--bs-body-color);
+}
+
+.ezy__careers11-tags p {
+  background-color: var(--ezy-theme-color);
+  padding: 5px 10px;
+  color: #fff;
+  margin: 0 5px;
+  border-radius: 5px;
+  min-width: 80px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ezy__header11 {
+  /* Bootstrap variables */
+  --bs-body-color: #000000;
+  --bs-body-bg: rgb(255, 255, 255);
+
+  /* Easy Frontend variables */
+  --ezy-theme-color: rgb(13, 110, 253);
+  --ezy-theme-color-rgb: 13, 110, 253;
+  --ezy-shape-color: #f6f6f6;
+  --ezy-shadow: 0px 4px 44px rgba(159, 190, 218, 0.37);
+
+  background-color: var(--bs-body-bg);
+  overflow: hidden;
+  padding: 100px 0;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .ezy__header11 {
+    padding: 180px 0;
+  }
+}
+
+/* Gray Block Style */
+.gray .ezy__header11,
+.ezy__header11.gray {
+  /* Bootstrap variables */
+  --bs-body-bg: rgb(246, 246, 246);
+
+  /* Easy Frontend variables */
+  --ezy-shape-color: #fff;
+  --ezy-shadow: 0px 4px 44px rgba(168, 190, 210, 0.37);
+}
+
+/* Dark Gray Block Style */
+.dark-gray .ezy__header11,
+.ezy__header11.dark-gray {
+  /* Bootstrap variables */
+  --bs-body-color: #ffffff;
+  --bs-body-bg: rgb(30, 39, 53);
+
+  /* Easy Frontend variables */
+  --ezy-shape-color: rgb(11, 23, 39);
+  --ezy-shadow: 0px 4px 44px rgba(55, 55, 55, 0.37);
+}
+
+/* Dark Block Style */
+.dark .ezy__header11,
+.ezy__header11.dark {
+  /* Bootstrap variables */
+  --bs-body-color: #ffffff;
+  --bs-body-bg: rgb(11, 23, 39);
+
+  /* Easy Frontend variables */
+  --ezy-shape-color: rgb(30, 39, 53);
+  --ezy-shadow: 0px 4px 44px rgba(0, 0, 0, 0.37);
+}
+
+.ezy__header11-heading {
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 25px;
+  color: var(--bs-body-color);
+}
+
+@media (min-width: 768px) {
+  .ezy__header11-heading {
+    font-size: 70px;
+    line-height: 70px;
+  }
+}
+
+.ezy__header11-sub-heading {
+  color: var(--bs-body-color);
+  font-size: 22px;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.ezy__header11-btn {
+  padding: 12px 30px;
+  color: var(--bs-body-color);
+  box-shadow: var(--ezy-shadow);
+  border-radius: 10px;
+}
+
+.ezy__header11-btn:hover {
+  color: var(--bs-body-color);
+}
+
 .ezy__blog4 {
   /* Bootstrap variables */
   --bs-body-color: #28303b;

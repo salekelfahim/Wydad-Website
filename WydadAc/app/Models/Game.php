@@ -23,4 +23,9 @@ class Game extends Model
     {
         return $this->belongsTo(Compitition::class);
     }
+
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
 }

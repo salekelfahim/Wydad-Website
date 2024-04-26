@@ -15,11 +15,11 @@
 @endif
 
 <div style="margin-left: 17%;" class="container mt-3 mb-4">
-    <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Game</button>
     <div class="col-lg-9 mt-4 mt-lg-0">
         <div class="row">
             <div class="col-md-12">
                 <div class="user-dashboard-info-box table-responsive mb-0 bg-white p-4 shadow-sm">
+                <button class="btn btn-dark float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Game</button>
                     <table class="table manage-candidates-top mb-0">
                         <thead>
                             <tr>

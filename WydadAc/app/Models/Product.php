@@ -27,4 +27,9 @@ class Product extends Model
     {
         return $this->Hasmany(Productssize::class);
     }
+
+    public function panier()
+    {
+        return $this->Hasmany(Panier::class);
+    }
 }

@@ -29,7 +29,7 @@ class AuthController extends Controller
         return view('auth');
     }
 
-    
+
     public function Register(RegisterRequest $request)
     {
         $user = [
@@ -41,13 +41,12 @@ class AuthController extends Controller
 
         $create = $this->userServiceinterface->register($user);
 
-        if($create){
+        if ($create) {
 
             return back()->with('success', 'Account Created Successfully! Please Sign In.');
         }
 
         return back()->with('error', 'Account Created Unsuccessfully! Please Try Again.');
-
     }
 
 
@@ -57,11 +56,21 @@ class AuthController extends Controller
         $email = $request->input('email');
         $password = $request->input('password');
 
-        $user = $this->userServiceinterface->login($email,$password);
+        $useer = $this->userServiceinterface->login($email, $password);
+        
+        if ($useer) {
 
-        if ($user){
+            $user = auth()->user();
 
-            return redirect()->route('index');
+            if ($user->role_id === 2) {
+
+                return redirect()->route('index');
+            }
+
+            if ($user->role_id === 1) {
+
+                return redirect()->route('dashboard');
+            }
         }
 
         return back()->with('error', 'Invalid email or password.');

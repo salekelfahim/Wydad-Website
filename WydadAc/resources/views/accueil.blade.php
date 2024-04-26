@@ -12,7 +12,7 @@
                 <div class="col-md-6">
                   <div class="banner-content">
                     <h1 class="display-2 text-uppercase text-dark pb-5">WAC Unofficial Website</h1>
-                    <a href="shop.html" class="btn btn-medium btn-dark text-uppercase btn-rounded-none">About Us</a>
+                    <a href="/about" class="btn btn-medium btn-dark text-uppercase btn-rounded-none">About Us</a>
                   </div>
                 </div>
                 <div class="col-md-5">
@@ -59,39 +59,39 @@
           <div class="col-lg-3 col-md-6 pb-3">
             <div class="icon-box d-flex">
               <div class="icon-box-icon pe-3 pb-3">
-                <svg class="cart-outline">
-                  <use xlink:href="#cart-outline" />
+              <svg class="shield-plus">
+                  <use xlink:href="#shield-plus" />
                 </svg>
               </div>
               <div class="icon-box-content">
-                <h3 class="card-title text-uppercase text-dark">Free delivery</h3>
-                <p>Consectetur adipi elit lorem ipsum dolor sit amet.</p>
+                <h3 class="card-title text-uppercase text-dark">Botola</h3>
+                <p>Wydad has won a record of 22 Moroccan league titles.</p>
               </div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 pb-3">
             <div class="icon-box d-flex">
               <div class="icon-box-icon pe-3 pb-3">
-                <svg class="quality">
-                  <use xlink:href="#quality" />
+              <svg class="shield-plus">
+                  <use xlink:href="#shield-plus" />
                 </svg>
               </div>
               <div class="icon-box-content">
-                <h3 class="card-title text-uppercase text-dark">Quality guarantee</h3>
-                <p>Dolor sit amet orem ipsu mcons ectetur adipi elit.</p>
+                <h3 class="card-title text-uppercase text-dark">Throne Cup</h3>
+                <p>Wydad has won 9 Moroccan Throne Cup.</p>
               </div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 pb-3">
             <div class="icon-box d-flex">
               <div class="icon-box-icon pe-3 pb-3">
-                <svg class="price-tag">
-                  <use xlink:href="#price-tag" />
+              <svg class="shield-plus">
+                  <use xlink:href="#shield-plus" />
                 </svg>
               </div>
               <div class="icon-box-content">
-                <h3 class="card-title text-uppercase text-dark">Daily offers</h3>
-                <p>Amet consectetur adipi elit loreme ipsum dolor sit.</p>
+                <h3 class="card-title text-uppercase text-dark">CAF Champions League</h3>
+                <p>Wydad has won 3 CAF Champions League.</p>
               </div>
             </div>
           </div>
@@ -103,8 +103,8 @@
                 </svg>
               </div>
               <div class="icon-box-content">
-                <h3 class="card-title text-uppercase text-dark">100% secure payment</h3>
-                <p>Rem Lopsum dolor sit amet, consectetur adipi elit.</p>
+                <h3 class="card-title text-uppercase text-dark">African Super Cup</h3>
+                <p>Wydad has won 1 African Super Cup.</p>
               </div>
             </div>
           </div>
@@ -129,7 +129,7 @@
                   </div>
                   <div class="cart-concern position-absolute">
                     <div class="cart-button d-flex">
-                      <a href="{{ route('product.details', $product->id) }}" class="btn btn-medium btn-black">Add to Cart<svg class="cart-outline"><use xlink:href=""></use></svg></a>
+                      <a href="{{ route('product.details', $product->id) }}" class="btn btn-medium btn-black">Details<svg class="cart-outline"><use xlink:href=""></use></svg></a>
                     </div>
                   </div>
                   <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
@@ -179,20 +179,6 @@
         </div>
       </div>
       <div class="swiper-pagination position-absolute text-center"></div>
-    </section>
-    <section id="yearly-sale" class="bg-light-blue overflow-hidden mt-5 padding-xlarge" style="background-image: url('images/single-image1.png');background-position: right; background-repeat: no-repeat;">
-      <div class="row d-flex flex-wrap align-items-center">
-        <div class="col-md-6 col-sm-12">
-          <div class="text-content offset-4 padding-medium">
-            <h3>10% off</h3>
-            <h2 class="display-2 pb-5 text-uppercase text-dark">New year sale</h2>
-            <a href="shop.html" class="btn btn-medium btn-dark text-uppercase btn-rounded-none">Shop Sale</a>
-          </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-          
-        </div>
-      </div>
     </section>
     <section id="latest-blog" class="padding-large">
       <div class="container">
@@ -244,7 +230,7 @@
                 <div class="swiper-slide text-center d-flex justify-content-center">
                   <div class="review-item col-md-10">
                     <i class="icon icon-review"></i>
-                    <blockquote>“Tempus oncu enim pellen tesque este pretium in neque, elit morbi sagittis lorem habi mattis Pellen tesque pretium feugiat vel morbi suspen dise sagittis lorem habi tasse morbi.”</blockquote>
+                    <blockquote>“Through the highs and lows, we stand by Wydad Athletic Club, for it represents the spirit of determination and triumph.”</blockquote>
                     <div class="rating">
                       <svg class="star star-fill">
                         <use xlink:href="#star-fill"></use>
@@ -263,14 +249,14 @@
                       </svg>
                     </div>
                     <div class="author-detail">
-                      <div class="name text-dark text-uppercase pt-2">Emma Chamberlin</div>
+                      <div class="name text-dark text-uppercase pt-2">Supporters</div>
                     </div>
                   </div>
                 </div>
                 <div class="swiper-slide text-center d-flex justify-content-center">
                   <div class="review-item col-md-10">
                     <i class="icon icon-review"></i>
-                    <blockquote>“A blog is a digital publication that can complement a website or exist independently. A blog may include articles, short posts, listicles, infographics, videos, and other digital content.”</blockquote>
+                    <blockquote>“In victory or defeat, the spirit of Wydad Athletic Club shines bright, illuminating our path with hope and determination.”</blockquote>
                     <div class="rating">
                       <svg class="star star-fill">
                         <use xlink:href="#star-fill"></use>
@@ -289,7 +275,7 @@
                       </svg>
                     </div>
                     <div class="author-detail">
-                      <div class="name text-dark text-uppercase pt-2">Jennie Rose</div>
+                      <div class="name text-dark text-uppercase pt-2">Supporters</div>
                     </div>
                   </div>
                 </div>

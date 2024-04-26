@@ -12,7 +12,6 @@ class Reservation extends Model
     protected $fillable = [
         'ticket_id',
         'user_id',
-        'status',
     ];
 
     public function ticket()

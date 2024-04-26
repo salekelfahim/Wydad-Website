@@ -5,13 +5,6 @@
 <section class="ezy__blog4">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <h2 class="ezy__blog4-heading mb-3 mt-0">Heal the world with banking blog.</h2>
-                <p class="ezy__blog4-sub-heading px-lg-5 mb-4">
-                    Banking crises have developed many times throughout history when one or more risks have emerged.
-                </p>
-                <a href="" class="btn btn-warning ezy__blog4-btn">All Posts</a>
-            </div>
         </div>
 
         <div class="row align-items-center mt-5">

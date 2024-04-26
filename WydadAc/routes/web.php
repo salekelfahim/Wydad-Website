@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReservationsController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\TicketController;
 use Illuminate\Support\Facades\Route;
@@ -20,10 +22,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-})->name('dashboard');
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
@@ -47,6 +45,9 @@ Route::get('/product/{id}', [ProductController::class, 'ProductDetails'])->name(
 Route::get('/games', [GameController::class, 'index']);
 Route::get('/game/{id}', [GameController::class, 'getGame']);
 
+Route::get('/about', function () {
+    return view('about');
+});
 
 Route::middleware('admin')->group(function () {
     Route::get('/gameslist', [GameController::class, 'getGames']);
@@ -76,11 +77,20 @@ Route::middleware('admin')->group(function () {
     Route::delete('/deleteplayer/{id}', [PlayerController::class, 'delete'])->name('player.delete');
     Route::get('/addplayer', [PlayerController::class, 'Show']);
     Route::post('/addplayer', [PlayerController::class, 'AddPlayer'])->name('addplayer');
+
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+
 });
 
 
 
 Route::middleware('auth')->group(function () {
     Route::post('/buyproduct', [ProductController::class, 'BuyProducts'])->name('buyproduct');
+
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    Route::post('/createreservation', [ReservationsController::class, 'createReservation'])->name('createReservation');
+
+    Route::get('/myreservations/{id}', [ReservationsController::class, 'MyReservations'])->name('myreservations');
+
 });

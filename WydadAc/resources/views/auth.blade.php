@@ -24,13 +24,7 @@
             <form action="{{route('register')}}" method="POST">
                 @csrf
                 <h1>Create Account</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your email for registeration</span>
+                <span>Use your email for registeration</span>
                 <input id="firstname" name="firstname" type="text" placeholder="First Name">
                 @if($errors->has('firstname'))
                 <p style="color: red;">{{ $errors->first('firstname') }}</p>
@@ -59,13 +53,7 @@
             <form method="POST" action="{{route('login')}}">
                 @csrf
                 <h1>Sign In</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your email password</span>
+                <span>Use your email and password</span>
                 @if(session('error'))
                 <div class="alert alert-danger" id="alert">
                     {{ session('error') }}
@@ -93,7 +81,7 @@
                 </div>
                 <div class="toggle-panel toggle-right">
                     <img src="{{ asset('images/Logo_Wydad_Athletic_Club.png') }}" class="logo" style="width: 25%; height:20%; margin-bottom: 4%;">
-                    <h1>Hello, Friend!</h1>
+                    <h1>Wydad!</h1>
                     <p>Register with your personal details to use all of site features</p>
                     <button class="hidden" id="register">Sign Up</button>
                 </div>

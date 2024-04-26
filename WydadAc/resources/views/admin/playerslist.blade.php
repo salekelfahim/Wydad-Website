@@ -19,11 +19,11 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="user-dashboard-info-box table-responsive mb-0 bg-white p-4 shadow-sm">
+                    <a href="/addplayer" class="btn btn-dark float-end">Add Player</a>
                     <table class="table manage-candidates-top mb-0">
                         <thead>
                             <tr>
                                 <th>Players List</th>
-                                <th class="text-center">Status</th>
                                 <th class="action text-right">Action</th>
                             </tr>
                         </thead>
@@ -47,13 +47,8 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="candidate-list-favourite-time text-center">
-                                    <a class="candidate-list-favourite order-2 text-danger" href="#"><i class="fas fa-heart"></i></a>
-                                    <span class="candidate-list-time order-1">Shortlisted</span>
-                                </td>
                                 <td>
                                     <ul class="list-unstyled mb-0 d-flex">
-                                        <li><a href="#" class="text-primary" data-toggle="tooltip" title="" data-original-title="view"><i class="far fa-eye"></i></a></li>
                                         <li data-bs-toggle="modal" data-bs-target="#exampleModal{{$player->id}}" class="text-info" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"></i></li>
                                         <form action="{{ route('player.delete', $player->id) }}" method="POST" style="display: inline-block;">
                                             @csrf
@@ -141,7 +136,7 @@
 
                                                 <div class="mb-3">
                                                     <label for="form4Example3" class="form-label">Image</label>
-                                                    <input type="file" id="picture" name="picture" class="form-control" accept="image/*">
+                                                    <input type="file" id="picturee" name="picturee" class="form-control" accept="image/*">
                                                     <img src="{{ asset('storage/' . $player->picture) }}" height="40%" width="40%" alt="Player">
                                                     @error('picture')
                                                     <div class="alert alert-danger">- {{ $message }}</div>
